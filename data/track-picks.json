@@ -1,0 +1,30 @@
+[
+  {"track":"信号可靠性","focus":"先保证输入可信，再研究去噪模型。","projects":[
+    {"repo":"autoreject/autoreject","reason":"先做质量控制基线：学习拒绝阈值并修复坏段，容易接入 MNE 流程。","caution":"阈值只用训练集拟合；避免把真实任务信息当伪迹消掉。"},
+    {"repo":"sappelhoff/pyprep","reason":"统一参考与坏导联处理：可拆用 PREP 流程，降低跨数据集预处理差异。","caution":"核对参考电极、单位和 montage；不应无条件重跑官方预处理。"},
+    {"repo":"ncclabsustech/EEGdenoiseNet","reason":"建立可控去噪实验：噪声混合、SNR 设置和经典网络都便于构造基线。","caution":"数据许可与赛事准入独立核验；旧环境需要迁移。"}]},
+  {"track":"疾病","focus":"覆盖事件检测、疾病表征与可迁移骨干。","projects":[
+    {"repo":"keruiwu/SeizureTransformer","reason":"癫痫事件检测的直接参考：长序列 Transformer 及训练评估链路贴近临床任务。","caution":"只有官方下游包含相应疾病 / 事件时才适用；重新按官方划分训练。"},
+    {"repo":"DL4mHealth/LEAD","reason":"疾病表征预训练候选：可参考多数据集预训练与疾病分类的实现。","caution":"原数据分布与标签不等同竞赛；决赛重训全部参数并核验许可。"},
+    {"repo":"wjq-learning/CBraMod","reason":"通用 EEG 骨干对照：完整预训练入口、时空特征建模，方便统一接多疾病任务头。","caution":"这是架构与训练配方推荐，不代表已在本竞赛疾病任务胜出。"}]},
+  {"track":"睡眠","focus":"成熟序列模型与近期鲁棒方法各留一条路线。","projects":[
+    {"repo":"perslev/U-Time","reason":"首选成熟睡眠基线：U-Time / U-Sleep 处理连续时序，可参考训练、切窗及整夜评估。","caution":"公开 U-Sleep 权重不可带入决赛；核对通道与 epoch 标签定义。"},
+    {"repo":"emadeldeen24/AttnSleep","reason":"轻量注意力对照：睡眠分期训练链路明确，适合验证上下文和类别不平衡处理。","caution":"按被试划分后再切片；原论文数据和评价协议不能直接替代官方协议。"},
+    {"repo":"Q9gJYx/StageGuard","reason":"2026 新方法候选：在成熟基线之外，研究更鲁棒的睡眠阶段表示与训练设计。","caution":"先跑小规模复现与显存实测，再决定是否纳入两周训练预算。"}]},
+  {"track":"认知情绪","focus":"统一评测、任务专用方法、通用基座互相校验。","projects":[
+    {"repo":"XJTU-EEG/LibEER","reason":"首选情绪识别工具箱：统一数据处理、方法与评估，便于建立可比较的实验。","caution":"严格采用跨被试划分；库内默认划分可能不等同比赛。"},
+    {"repo":"affctivai/HDGNet","reason":"情绪任务专用候选：参考层级图结构与导联关系建模，与通用 Transformer 做结构对照。","caution":"未明确开源许可证；复制修改前需取得授权或确认条款。"},
+    {"repo":"wjq-learning/CBraMod","reason":"跨认知 / 情绪任务共享骨干：适合验证通用预训练相对专用情绪网络的迁移收益。","caution":"从零重训；以实际官方任务确认收益，避免只在单一情绪数据集调参。"}]},
+  {"track":"运动想象","focus":"小模型下限、时序注意力与更新的结构对照。","projects":[
+    {"repo":"vlawhern/arl-eegmodels","reason":"EEGNet 是预算友好的起点：紧凑卷积结构适合检查数据与训练协议是否可靠。","caution":"保留原实现的分部件许可；使用相同划分和预算公平对照。"},
+    {"repo":"Altaheri/EEG-ATCNet","reason":"任务适配明确：注意力与时序卷积可直接用于运动想象分类实验。","caution":"采用作者较新的 TrainValTest 流程，并按竞赛要求替换划分。"},
+    {"repo":"Altaheri/TCFormer","reason":"2025 结构候选：比较卷积与 Transformer 的时序建模，作为 EEGNet 之后的升级实验。","caution":"先测本队预算下的收敛与跨被试波动，不能照搬论文结果。"}]},
+  {"track":"自然刺激解码","focus":"覆盖视觉对齐与听觉解码；外部编码器是主要规则风险。","projects":[
+    {"repo":"ncclab-sustech/EEG_Image_decode","reason":"ATM 视觉解码主线：可参考 EEG 特征与图像表征对齐、检索及重建接口。","caution":"CLIP / 扩散权重依赖不默认合规；决赛应先研究无需公开教师的替代目标。"},
+    {"repo":"LauMason/ViEEG","reason":"2026 视觉解码候选：与 ATM 对照，研究新的跨模态表征和迁移实现。","caution":"逐项审计视觉编码器、生成器和缓存特征的预训练来源。"},
+    {"repo":"facebookresearch/brainmagick","reason":"补齐听觉分支：参考 EEG / MEG 到语音表示的对齐与检索，避免只覆盖图像刺激。","caution":"CC-BY-NC 且已归档；外部音频表示 / 权重与许可均需确认。"}]},
+  {"track":"SSVEP","focus":"优先建立频率 / 相位敏感的经典强基线。","projects":[
+    {"repo":"pikipity/SSVEP-Analysis-Toolbox","reason":"首选方法集合：多种 SSVEP 算法与评测接口便于快速建立强对照。","caution":"许可证未明确；使用前确认条款，并替换为官方数据与划分。"},
+    {"repo":"mnakanishi/TRCA-SSVEP","reason":"经典 TRCA 作者实现：作为任务相关成分分析的可靠方法参考，检验预训练是否真有收益。","caution":"依赖校准试次；不得跨被试或跨测试划分建立模板。"},
+    {"repo":"Mohammad-Norizadeh-Cherloo/SSVEP-Detection-Toolbox","reason":"另一套检测实现交叉核验：适合比较频带、刺激频率与短时间窗设置。","caution":"许可证未明确；注意滤波边界、刺激谐波和相位保留。"}]}
+]

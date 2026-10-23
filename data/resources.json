@@ -1,0 +1,2836 @@
+{
+  "title": "OmniEEG 开源研究库",
+  "asOf": "2026-10-24",
+  "scope": "项目发现与代码/许可核查；未复现实验；竞赛适配建议不代表官方准入或性能排名。",
+  "projects": [
+    {
+      "name": "LaBraM",
+      "repo": "935963004/LaBraM",
+      "category": "基座与预训练",
+      "tracks": [
+        "全赛道"
+      ],
+      "year": 2024,
+      "description": "离散频谱 tokenizer 与掩码神经码预测的经典 EEG 基座。",
+      "use": "复用数据转换、VQ tokenizer、run_labram_pretraining.py 与下游适配。",
+      "caveat": "决赛须重新训练 tokenizer 和 backbone；公开 VQ 码本也属于已训练参数。",
+      "priority": "P0",
+      "scratch": "已公开预训练入口",
+      "sources": [
+        "https://github.com/935963004/LaBraM"
+      ],
+      "id": "935963004--labram",
+      "url": "https://github.com/935963004/LaBraM",
+      "checkedAt": "2026-10-24",
+      "pushedAt": "2025-09-29T05:38:39Z",
+      "commit": "c431221e6cfd23dbfa9950e0180682fb322b0548",
+      "archived": false,
+      "license": "MIT",
+      "licenseLabel": "MIT",
+      "licenseClass": "open",
+      "readiness": "pretrain"
+    },
+    {
+      "name": "CBraMod",
+      "repo": "wjq-learning/CBraMod",
+      "category": "基座与预训练",
+      "tracks": [
+        "全赛道"
+      ],
+      "year": 2025,
+      "description": "面向异构 EEG 的交叉时空建模基座。",
+      "use": "pretrain_main.py 可接自有语料；适合算力预算内的首个从零基线。",
+      "caveat": "微调示例默认加载公开 checkpoint；决赛应删除加载并使用指定数据重训。",
+      "priority": "P0",
+      "scratch": "已公开预训练入口",
+      "sources": [
+        "https://github.com/wjq-learning/CBraMod"
+      ],
+      "id": "wjq-learning--cbramod",
+      "url": "https://github.com/wjq-learning/CBraMod",
+      "checkedAt": "2026-10-24",
+      "pushedAt": "2026-08-07T08:43:09Z",
+      "commit": "b9e961003214326972c567eff390e75b0287e32a",
+      "archived": false,
+      "license": "MIT",
+      "licenseLabel": "MIT",
+      "licenseClass": "open",
+      "readiness": "pretrain"
+    },
+    {
+      "name": "EEGPT",
+      "repo": "BINE022/EEGPT",
+      "category": "基座与预训练",
+      "tracks": [
+        "全赛道"
+      ],
+      "year": 2024,
+      "description": "联合掩码重建与时空表征对齐的 EEG 预训练模型。",
+      "use": "复用 pretrain/run_pretraining.py、数据准备与编码器。",
+      "caveat": "教师/目标分支须由本次训练初始化或更新；不能复用发布权重。",
+      "priority": "P0",
+      "scratch": "已公开预训练入口",
+      "sources": [
+        "https://github.com/BINE022/EEGPT"
+      ],
+      "id": "bine022--eegpt",
+      "url": "https://github.com/BINE022/EEGPT",
+      "checkedAt": "2026-10-24",
+      "pushedAt": "2026-09-19T08:32:52Z",
+      "commit": "ea7282f698c406cd423ccbedbe9960853761144c",
+      "archived": false,
+      "license": "Apache-2.0",
+      "licenseLabel": "Apache-2.0",
+      "licenseClass": "open",
+      "readiness": "pretrain"
+    },
+    {
+      "name": "REVE",
+      "repo": "elouayas/reve_eeg",
+      "category": "基座与预训练",
+      "tracks": [
+        "全赛道"
+      ],
+      "year": 2025,
+      "description": "以电极坐标和时间编码适配不同通道布局的 MAE 基座，预训练代码于 2026 年 3 月发布。",
+      "use": "src/train.py 与 Accelerate 配方、坐标嵌入、异构数据加载。",
+      "caveat": "原论文语料不能直接视为允许语料；位置库和模型权重需分别审查。代码和权重授权不同。",
+      "priority": "P0",
+      "scratch": "已公开预训练入口",
+      "sources": [
+        "https://github.com/elouayas/reve_eeg",
+        "https://brain-bzh.github.io/reve/"
+      ],
+      "id": "elouayas--reve_eeg",
+      "url": "https://github.com/elouayas/reve_eeg",
+      "checkedAt": "2026-10-24",
+      "pushedAt": "2026-03-20T18:36:36Z",
+      "commit": "06a7059a07c3dabd80aee60c3dbc1eca4bdbe1c7",
+      "archived": false,
+      "license": "MIT",
+      "licenseLabel": "MIT",
+      "licenseClass": "open",
+      "readiness": "pretrain"
+    },
+    {
+      "name": "ST-EEGFormer",
+      "repo": "LiuyinYang1101/STEEGFormer",
+      "category": "基座与预训练",
+      "tracks": [
+        "全赛道"
+      ],
+      "year": 2026,
+      "description": "简洁 ViT/MAE 基座，附跨任务评测和 2025 EEG Foundation Challenge 代码。",
+      "use": "pretrain/ddp_train_eeg.py、下游数据接入教程及竞赛微调经验。",
+      "caveat": "历史竞赛获奖不代表本赛适用；HBN 继续预训练权重不可用于本次决赛。",
+      "priority": "P0",
+      "scratch": "已公开预训练入口",
+      "sources": [
+        "https://github.com/LiuyinYang1101/STEEGFormer",
+        "https://openreview.net/forum?id=5Xwm8e6vbh"
+      ],
+      "id": "liuyinyang1101--steegformer",
+      "url": "https://github.com/LiuyinYang1101/STEEGFormer",
+      "checkedAt": "2026-10-24",
+      "pushedAt": "2026-07-09T16:33:56Z",
+      "commit": "542ee17918c3c2c36ba1d4ea02bedff5eb149370",
+      "archived": false,
+      "license": "MIT",
+      "licenseLabel": "MIT",
+      "licenseClass": "open",
+      "readiness": "pretrain"
+    },
+    {
+      "name": "CodeBrain",
+      "repo": "jingyingma01/CodeBrain",
+      "category": "基座与预训练",
+      "tracks": [
+        "全赛道"
+      ],
+      "year": 2026,
+      "description": "时域/频域解耦 tokenizer 配合多尺度 EEGSSM。",
+      "use": "Pretrain.pretrain_TFDual 和 Pretrain.pretrain_EEGSSM 两阶段训练。",
+      "caveat": "tokenizer 与 EEGSSM 都须从零训练；注意不是同名 MRI 或编码助手仓库。",
+      "priority": "P1",
+      "scratch": "已公开预训练入口",
+      "sources": [
+        "https://github.com/jingyingma01/CodeBrain"
+      ],
+      "id": "jingyingma01--codebrain",
+      "url": "https://github.com/jingyingma01/CodeBrain",
+      "checkedAt": "2026-10-24",
+      "pushedAt": "2026-08-05T18:56:52Z",
+      "commit": "22d350caf68246d2fda4f630ef837420db3fb130",
+      "archived": false,
+      "license": "Apache-2.0",
+      "licenseLabel": "Apache-2.0",
+      "licenseClass": "open",
+      "readiness": "pretrain"
+    },
+    {
+      "name": "CSBrain",
+      "repo": "yuchen2199/CSBrain",
+      "category": "基座与预训练",
+      "tracks": [
+        "全赛道"
+      ],
+      "year": 2025,
+      "description": "跨尺度时空 EEG 表征与掩码重建。",
+      "use": "sh/pretrain_CSBrain.sh、跨尺度模块及下游微调脚本。",
+      "caveat": "替换原始预训练数据源并保留被试隔离；不能导入公开预训练权重。",
+      "priority": "P0",
+      "scratch": "已公开预训练入口",
+      "sources": [
+        "https://github.com/yuchen2199/CSBrain"
+      ],
+      "id": "yuchen2199--csbrain",
+      "url": "https://github.com/yuchen2199/CSBrain",
+      "checkedAt": "2026-10-24",
+      "pushedAt": "2025-11-26T13:05:55Z",
+      "commit": "185aee55b24d0410a830df8dd08d03f675616998",
+      "archived": false,
+      "license": "UNKNOWN",
+      "licenseLabel": "未明确许可",
+      "licenseClass": "unclear",
+      "readiness": "pretrain"
+    },
+    {
+      "name": "BioFoundation · LUNA / FEMBA / LuMamba",
+      "repo": "pulp-bio/BioFoundation",
+      "category": "基座与预训练",
+      "tracks": [
+        "全赛道"
+      ],
+      "year": 2026,
+      "description": "统一提供 LUNA、FEMBA 与 2026 LuMamba 等模型及训练实验。",
+      "use": "Hydra/Lightning 训练、拓扑无关聚合、双向 Mamba 与轻量化设计。",
+      "caveat": "源码 Apache-2.0；发布权重 CC BY-ND 4.0。决赛只复用代码并重训。",
+      "priority": "P0",
+      "scratch": "已公开预训练入口",
+      "sources": [
+        "https://github.com/pulp-bio/BioFoundation"
+      ],
+      "id": "pulp-bio--biofoundation",
+      "url": "https://github.com/pulp-bio/BioFoundation",
+      "checkedAt": "2026-10-24",
+      "pushedAt": "2026-10-12T08:00:48Z",
+      "commit": "d4484feccf62eeec666380cb55b5d5b1d517cd71",
+      "archived": false,
+      "license": "Apache-2.0",
+      "licenseLabel": "Apache-2.0",
+      "licenseClass": "open",
+      "readiness": "pretrain"
+    },
+    {
+      "name": "EEGMamba",
+      "repo": "wjq-learning/EEGMamba",
+      "category": "基座与预训练",
+      "tracks": [
+        "全赛道"
+      ],
+      "year": 2025,
+      "description": "与 CBraMod 工作流兼容的 Mamba EEG 基座。",
+      "use": "pretrain_main.py、Mamba 模块、finetune_main.py。",
+      "caveat": "需要适配 Mamba/CUDA 环境；默认 checkpoint 加载必须移除。",
+      "priority": "P1",
+      "scratch": "已公开预训练入口",
+      "sources": [
+        "https://github.com/wjq-learning/EEGMamba"
+      ],
+      "id": "wjq-learning--eegmamba",
+      "url": "https://github.com/wjq-learning/EEGMamba",
+      "checkedAt": "2026-10-24",
+      "pushedAt": "2025-11-17T11:16:45Z",
+      "commit": "dbc83fa072744201e8897aeb9f65007b952ad323",
+      "archived": false,
+      "license": "MIT",
+      "licenseLabel": "MIT",
+      "licenseClass": "open",
+      "readiness": "pretrain"
+    },
+    {
+      "name": "BrainOmni",
+      "repo": "OpenTSLab/BrainOmni",
+      "category": "基座与预训练",
+      "tracks": [
+        "全赛道"
+      ],
+      "year": 2025,
+      "description": "统一 EEG/MEG 的两阶段 tokenizer 与基座训练。",
+      "use": "电极坐标、montage 管理、BrainTokenizer 和 DeepSpeed 训练。",
+      "caveat": "原版 EEG+MEG 语料并非本赛批准数据；两阶段均需从零训练。",
+      "priority": "P1",
+      "scratch": "已公开预训练入口",
+      "sources": [
+        "https://github.com/OpenTSLab/BrainOmni"
+      ],
+      "id": "opentslab--brainomni",
+      "url": "https://github.com/OpenTSLab/BrainOmni",
+      "checkedAt": "2026-10-24",
+      "pushedAt": "2025-12-11T11:54:28Z",
+      "commit": "340d6b5aba886af76b217272cdb3251651e9bf16",
+      "archived": false,
+      "license": "NOASSERTION",
+      "licenseLabel": "MIT（保留两段版权）",
+      "licenseClass": "open",
+      "readiness": "pretrain"
+    },
+    {
+      "name": "BIOT",
+      "repo": "ycq091044/BIOT",
+      "category": "基座与预训练",
+      "tracks": [
+        "全赛道"
+      ],
+      "year": 2023,
+      "description": "适配不同通道与信号格式的生理信号 Transformer。",
+      "use": "有监督和无监督预训练入口、异构通道 tokenization、缺失值处理。",
+      "caveat": "公开权重依赖临床与睡眠语料；本赛需重建数据加载和 montage。",
+      "priority": "P1",
+      "scratch": "已公开预训练入口",
+      "sources": [
+        "https://github.com/ycq091044/BIOT"
+      ],
+      "id": "ycq091044--biot",
+      "url": "https://github.com/ycq091044/BIOT",
+      "checkedAt": "2026-10-24",
+      "pushedAt": "2023-12-11T06:26:35Z",
+      "commit": "d138e32634e52ae9fa6ec98ac9c4087b14ca869a",
+      "archived": false,
+      "license": "MIT",
+      "licenseLabel": "MIT",
+      "licenseClass": "open",
+      "readiness": "pretrain"
+    },
+    {
+      "name": "BENDR",
+      "repo": "SPOClab-ca/BENDR",
+      "category": "基座与预训练",
+      "tracks": [
+        "全赛道"
+      ],
+      "year": 2021,
+      "description": "卷积编码器与对比自监督 Transformer 的经典路线。",
+      "use": "BERT 式掩码对比目标、DN3 数据处理与下游配置。",
+      "caveat": "较老依赖需要更新；TUEG 与发布权重不能自动带入决赛。",
+      "priority": "P1",
+      "scratch": "已公开预训练入口",
+      "sources": [
+        "https://github.com/SPOClab-ca/BENDR"
+      ],
+      "id": "spoclab-ca--bendr",
+      "url": "https://github.com/SPOClab-ca/BENDR",
+      "checkedAt": "2026-10-24",
+      "pushedAt": "2022-08-05T19:25:31Z",
+      "commit": "ac918abaec111d15fcaa2a8fcd2bd3d8b0d81a10",
+      "archived": false,
+      "license": "UNKNOWN",
+      "licenseLabel": "未明确许可",
+      "licenseClass": "unclear",
+      "readiness": "pretrain"
+    },
+    {
+      "name": "Neuro-GPT",
+      "repo": "wenhui0206/NeuroGPT",
+      "category": "基座与预训练",
+      "tracks": [
+        "运动想象",
+        "全赛道"
+      ],
+      "year": 2024,
+      "description": "EEG 编码器连接 GPT 的片段重建与迁移框架。",
+      "use": "Conformer/GPT 模块与低数据运动想象微调思路。",
+      "caveat": "检查 GPT 初始化是否加载既有模型；本次只核验作者 README 与模型结构，训练入口需进一步核对。",
+      "priority": "P2",
+      "scratch": "需补核训练入口",
+      "sources": [
+        "https://github.com/wenhui0206/NeuroGPT"
+      ],
+      "id": "wenhui0206--neurogpt",
+      "url": "https://github.com/wenhui0206/NeuroGPT",
+      "checkedAt": "2026-10-24",
+      "pushedAt": "2024-05-07T18:07:43Z",
+      "commit": "230571d45ca4369b82f33ab42fc00863c2f95598",
+      "archived": false,
+      "license": "GPL-3.0",
+      "licenseLabel": "GPL-3.0",
+      "licenseClass": "open",
+      "readiness": "pretrain"
+    },
+    {
+      "name": "BrainBERT",
+      "repo": "czlwang/BrainBERT",
+      "category": "基座与预训练",
+      "tracks": [
+        "自然刺激解码",
+        "全赛道"
+      ],
+      "year": 2023,
+      "description": "为颅内电极记录设计的时频掩码自监督模型。",
+      "use": "STFT 掩码、run_train.py 和训练数据 manifest。",
+      "caveat": "原始对象为 iEEG，转到头皮 EEG 需要重新预处理；不使用公开权重。",
+      "priority": "P2",
+      "scratch": "已公开预训练入口",
+      "sources": [
+        "https://github.com/czlwang/BrainBERT"
+      ],
+      "id": "czlwang--brainbert",
+      "url": "https://github.com/czlwang/BrainBERT",
+      "checkedAt": "2026-10-24",
+      "pushedAt": "2025-11-05T22:31:49Z",
+      "commit": "cd2aaa84745f6cedfeedecb42981475913910c45",
+      "archived": false,
+      "license": "UNKNOWN",
+      "licenseLabel": "未明确许可",
+      "licenseClass": "unclear",
+      "readiness": "pretrain"
+    },
+    {
+      "name": "SingLEM",
+      "repo": "ttlabtuat/SingLEM",
+      "category": "基座与预训练",
+      "tracks": [
+        "全赛道"
+      ],
+      "year": 2026,
+      "description": "单通道编码器独立处理各电极，再组合为下游表示。",
+      "use": "单通道表征、通道变化适配、严格 LOSO 与伪迹边界处理。",
+      "caveat": "作者明确当前包不含完整 71 数据集从零预训练流水线；适合作为结构和评测参考。",
+      "priority": "P2",
+      "scratch": "仅编码器与下游复现包",
+      "sources": [
+        "https://github.com/ttlabtuat/SingLEM"
+      ],
+      "id": "ttlabtuat--singlem",
+      "url": "https://github.com/ttlabtuat/SingLEM",
+      "checkedAt": "2026-10-24",
+      "pushedAt": "2026-09-10T02:00:47Z",
+      "commit": "6db5b5af95f12b6180ffa762723a71ef06c92a4b",
+      "archived": false,
+      "license": "MIT",
+      "licenseLabel": "MIT",
+      "licenseClass": "open",
+      "readiness": "partial"
+    },
+    {
+      "name": "mdJPT",
+      "repo": "ncclab-sustech/mdJPT_nips2025",
+      "category": "基座与预训练",
+      "tracks": [
+        "认知情绪"
+      ],
+      "year": 2025,
+      "description": "多数据集联合训练的 EEG 情绪表示方法。",
+      "use": "train_multi.py、跨数据集配置、特征抽取和跨被试验证。",
+      "caveat": "模型使用标签及跨数据集对齐；须核实决赛是否允许该监督方式与通道插值文件。",
+      "priority": "P1",
+      "scratch": "已公开预训练入口",
+      "sources": [
+        "https://github.com/ncclab-sustech/mdJPT_nips2025"
+      ],
+      "id": "ncclab-sustech--mdjpt_nips2025",
+      "url": "https://github.com/ncclab-sustech/mdJPT_nips2025",
+      "checkedAt": "2026-10-24",
+      "pushedAt": "2026-04-01T05:32:09Z",
+      "commit": "bb84e89df5d05928ef3aa8645cbc339b59ed59de",
+      "archived": false,
+      "license": "UNKNOWN",
+      "licenseLabel": "未明确许可",
+      "licenseClass": "unclear",
+      "readiness": "pretrain"
+    },
+    {
+      "name": "SPERA",
+      "repo": "sees4321/SPERA_EEG",
+      "category": "基座与预训练",
+      "tracks": [
+        "全赛道"
+      ],
+      "year": 2026,
+      "description": "2026 年 10 月的几何/频率感知 JEPA 基座。",
+      "use": "球面电极先验、频谱关系正则、WebDataset 与 pretrain.py。",
+      "caveat": "PolyForm Noncommercial，属于限制用途源码；竞赛奖金/企业参赛适用性需核对条款。",
+      "priority": "P1",
+      "scratch": "已公开预训练入口",
+      "sources": [
+        "https://github.com/sees4321/SPERA_EEG",
+        "https://arxiv.org/abs/2610.10571"
+      ],
+      "id": "sees4321--spera_eeg",
+      "url": "https://github.com/sees4321/SPERA_EEG",
+      "checkedAt": "2026-10-24",
+      "pushedAt": "2026-10-19T04:15:44Z",
+      "commit": "a5aba5c40def3705a6a682a9a7e422a704124dc7",
+      "archived": false,
+      "license": "NOASSERTION",
+      "licenseLabel": "PolyForm Noncommercial · 非商业",
+      "licenseClass": "restricted",
+      "readiness": "pretrain"
+    },
+    {
+      "name": "NeurDuo-EEG",
+      "repo": "YifaNNW/NeurDuo-EEG",
+      "category": "基座与预训练",
+      "tracks": [
+        "睡眠",
+        "疾病",
+        "全赛道"
+      ],
+      "year": 2026,
+      "description": "2026 年 9 月提出的持久状态与显式记忆长序列 EEG 基座。",
+      "use": "频谱 tokenizer 训练、Mamba 持久记忆、流式长序列训练。",
+      "caveat": "公开权重尚标 coming soon；源码已有 tokenizer 与预训练脚本，CUDA/Mamba 依赖需验证。",
+      "priority": "P1",
+      "scratch": "已公开预训练入口",
+      "sources": [
+        "https://github.com/YifaNNW/NeurDuo-EEG",
+        "https://arxiv.org/abs/2609.38587"
+      ],
+      "id": "yifannw--neurduo-eeg",
+      "url": "https://github.com/YifaNNW/NeurDuo-EEG",
+      "checkedAt": "2026-10-24",
+      "pushedAt": "2026-10-01T21:09:14Z",
+      "commit": "8a3fa839c62d77f06bfd1c81d428b844174eb06d",
+      "archived": false,
+      "license": "MIT",
+      "licenseLabel": "MIT",
+      "licenseClass": "open",
+      "readiness": "pretrain"
+    },
+    {
+      "name": "LEGEND",
+      "repo": "5GYYYYY/LEGEND",
+      "category": "基座与预训练",
+      "tracks": [
+        "全赛道"
+      ],
+      "year": 2026,
+      "description": "语言对齐加潜空间 flow matching 去噪的 EEG 表征模型。",
+      "use": "参考架构、联合损失、pretrain_demo.py 最小训练示例。",
+      "caveat": "作者明确不包含完整 63000 小时流水线；语言模型/语义特征依赖可能触及公开权重禁令。",
+      "priority": "P2",
+      "scratch": "仅架构与最小训练示例",
+      "sources": [
+        "https://github.com/5GYYYYY/LEGEND"
+      ],
+      "id": "5gyyyyy--legend",
+      "url": "https://github.com/5GYYYYY/LEGEND",
+      "checkedAt": "2026-10-24",
+      "pushedAt": "2026-09-29T09:21:41Z",
+      "commit": "2c9c9ef9317acf4af8c7305790a2126b94201bcf",
+      "archived": false,
+      "license": "MIT",
+      "licenseLabel": "MIT",
+      "licenseClass": "open",
+      "readiness": "partial"
+    },
+    {
+      "name": "SPOTR",
+      "repo": "5GYYYYY/SPOTR",
+      "category": "基座与预训练",
+      "tracks": [
+        "全赛道"
+      ],
+      "year": 2026,
+      "description": "把多通道生理信号压缩到全局 token 再重建。",
+      "use": "通道数灵活的编码器、时空池化、pretrain_demo.py。",
+      "caveat": "只有最小合成训练示例，未发布原始多数据集完整流水线；需自行接入指定 EEG 数据。",
+      "priority": "P1",
+      "scratch": "仅架构与最小训练示例",
+      "sources": [
+        "https://github.com/5GYYYYY/SPOTR"
+      ],
+      "id": "5gyyyyy--spotr",
+      "url": "https://github.com/5GYYYYY/SPOTR",
+      "checkedAt": "2026-10-24",
+      "pushedAt": "2026-10-10T08:18:59Z",
+      "commit": "57b3c9f47cc7d20bc9852b84df9545f1dbb887f6",
+      "archived": false,
+      "license": "MIT",
+      "licenseLabel": "MIT",
+      "licenseClass": "open",
+      "readiness": "partial"
+    },
+    {
+      "name": "EEG-X",
+      "repo": "Emotiv/EEG-X",
+      "category": "基座与预训练",
+      "tracks": [
+        "全赛道"
+      ],
+      "year": 2025,
+      "description": "面向设备差异与噪声的 EEG 表征学习。",
+      "use": "设备适配、噪声鲁棒训练与 main.py 工作流。",
+      "caveat": "作者 README 较简略；接入前应核对数据协议和实际预训练配置。",
+      "priority": "P1",
+      "scratch": "有训练入口，预训练配方需补核",
+      "sources": [
+        "https://github.com/Emotiv/EEG-X",
+        "https://arxiv.org/abs/2511.08861"
+      ],
+      "id": "emotiv--eeg-x",
+      "url": "https://github.com/Emotiv/EEG-X",
+      "checkedAt": "2026-10-24",
+      "pushedAt": "2026-10-22T04:07:03Z",
+      "commit": "be72d06914aeeba846ac2b47e0ab102b25acd89c",
+      "archived": false,
+      "license": "UNKNOWN",
+      "licenseLabel": "未明确许可",
+      "licenseClass": "unclear",
+      "readiness": "pretrain"
+    },
+    {
+      "name": "EEG2Rep",
+      "repo": "Navidfoumani/EEG2Rep",
+      "category": "基座与预训练",
+      "tracks": [
+        "全赛道"
+      ],
+      "year": 2024,
+      "description": "以信息性掩码输入学习 EEG 表征的自监督方法。",
+      "use": "掩码与潜空间预测策略，可作 JEPA 类小规模消融。",
+      "caveat": "将原数据加载替换为官方数据；统一被试划分后才能比较。",
+      "priority": "P1",
+      "scratch": "有自监督训练代码",
+      "sources": [
+        "https://github.com/Navidfoumani/EEG2Rep"
+      ],
+      "id": "navidfoumani--eeg2rep",
+      "url": "https://github.com/Navidfoumani/EEG2Rep",
+      "checkedAt": "2026-10-24",
+      "pushedAt": "2025-10-13T07:13:54Z",
+      "commit": "8a72c39c8b5b1c1bd05d527c4187f30965fa5198",
+      "archived": false,
+      "license": "UNKNOWN",
+      "licenseLabel": "未明确许可",
+      "licenseClass": "unclear",
+      "readiness": "pretrain"
+    },
+    {
+      "name": "NeuroLM",
+      "repo": "935963004/NeuroLM",
+      "category": "基座与预训练",
+      "tracks": [
+        "全赛道"
+      ],
+      "year": 2025,
+      "description": "把神经 token 接入语言模型的多任务指令框架。",
+      "use": "train_vq.py、train_pretrain.py、自回归目标与任务头统一。",
+      "caveat": "原方案含预训练语言模型与文本对齐依赖；不能直接按原配方用于禁公开权重决赛。",
+      "priority": "P2",
+      "scratch": "已公开预训练入口",
+      "sources": [
+        "https://github.com/935963004/NeuroLM"
+      ],
+      "id": "935963004--neurolm",
+      "url": "https://github.com/935963004/NeuroLM",
+      "checkedAt": "2026-10-24",
+      "pushedAt": "2025-09-19T03:06:33Z",
+      "commit": "0cda9876d8ce6ee07ed0c43eee5e9a6f5c24b177",
+      "archived": false,
+      "license": "MIT",
+      "licenseLabel": "MIT",
+      "licenseClass": "open",
+      "readiness": "pretrain"
+    },
+    {
+      "name": "Uni-DMFM",
+      "repo": "ichenws/Uni-DMFM",
+      "category": "基座与预训练",
+      "tracks": [
+        "全赛道"
+      ],
+      "year": 2026,
+      "description": "动态多尺度 EEG 基座，2026 Pattern Recognition。",
+      "use": "pretrain.py、多尺度卷积与通道/时间表示。",
+      "caveat": "原版在 TUEG 训练；要替换为官方指定数据，核对许可证是否已提供。",
+      "priority": "P1",
+      "scratch": "已公开预训练入口",
+      "sources": [
+        "https://github.com/ichenws/Uni-DMFM"
+      ],
+      "id": "ichenws--uni-dmfm",
+      "url": "https://github.com/ichenws/Uni-DMFM",
+      "checkedAt": "2026-10-24",
+      "pushedAt": "2026-06-15T05:10:12Z",
+      "commit": "522f9fc09b6d5f3d1051e6941d1bff548d8f10de",
+      "archived": false,
+      "license": "UNKNOWN",
+      "licenseLabel": "未明确许可",
+      "licenseClass": "unclear",
+      "readiness": "pretrain"
+    },
+    {
+      "name": "EEG-DLite",
+      "repo": "t170815518/EEG-DLite",
+      "category": "基座与预训练",
+      "tracks": [
+        "全赛道"
+      ],
+      "year": 2026,
+      "description": "面向大 EEG 模型训练效率的数据蒸馏框架。",
+      "use": "语料压缩、LaBraM 数据配方与计算预算实验。",
+      "caveat": "仓库标注 CBCR 非商业条款；蒸馏依赖的教师或表征提取器必须检查权重来源。",
+      "priority": "P2",
+      "scratch": "有蒸馏/预训练脚本",
+      "sources": [
+        "https://github.com/t170815518/EEG-DLite"
+      ],
+      "id": "t170815518--eeg-dlite",
+      "url": "https://github.com/t170815518/EEG-DLite",
+      "checkedAt": "2026-10-24",
+      "pushedAt": "2025-12-16T04:51:23Z",
+      "commit": "a149bd29229f3b5f71352e642f3dee9b5db9f47a",
+      "archived": false,
+      "license": "NOASSERTION",
+      "licenseLabel": "CBCR 1.0 · 非商业",
+      "licenseClass": "restricted",
+      "readiness": "pretrain"
+    },
+    {
+      "name": "NeuroTTT",
+      "repo": "wsl2000/NeuroTTT",
+      "category": "基座与预训练",
+      "tracks": [
+        "全赛道"
+      ],
+      "year": 2025,
+      "description": "在测试时训练以减少预训练与下游任务差异。",
+      "use": "CBraMod 适配、测试时更新策略和消融框架。",
+      "caveat": "测试时更新是否允许须由赛规确认；默认公开 backbone 不能用于决赛。",
+      "priority": "P2",
+      "scratch": "下游适配方法",
+      "sources": [
+        "https://github.com/wsl2000/NeuroTTT"
+      ],
+      "id": "wsl2000--neurottt",
+      "url": "https://github.com/wsl2000/NeuroTTT",
+      "checkedAt": "2026-10-24",
+      "pushedAt": "2025-10-07T19:35:28Z",
+      "commit": "798d27d6eaf39adf2dd544a88697d64e065da165",
+      "archived": false,
+      "license": "UNKNOWN",
+      "licenseLabel": "未明确许可",
+      "licenseClass": "unclear",
+      "readiness": "pretrain"
+    },
+    {
+      "name": "Brant-X",
+      "repo": "zjunet/Brant-X",
+      "category": "基座与预训练",
+      "tracks": [
+        "全赛道"
+      ],
+      "year": 2024,
+      "description": "脑信号与其他生理信号对齐的系列模型。",
+      "use": "时空频率表征及多模态对齐模块。",
+      "caveat": "混合 iEEG/EEG/EXG 来源要重审；不能把其他模态或外部语料带入指定数据决赛。",
+      "priority": "P2",
+      "scratch": "需核训练配方",
+      "sources": [
+        "https://github.com/zjunet/Brant-X"
+      ],
+      "id": "zjunet--brant-x",
+      "url": "https://github.com/zjunet/Brant-X",
+      "checkedAt": "2026-10-24",
+      "pushedAt": "2024-07-18T11:19:09Z",
+      "commit": "ce1625a77dcb4ac829fcdceee0628387ed61908f",
+      "archived": false,
+      "license": "UNKNOWN",
+      "licenseLabel": "未明确许可",
+      "licenseClass": "unclear",
+      "readiness": "pretrain"
+    },
+    {
+      "name": "NeuroRVQ",
+      "repo": "KonstantinosBarmpas/NeuroRVQ",
+      "category": "基座与预训练",
+      "tracks": [
+        "全赛道"
+      ],
+      "year": 2026,
+      "description": "多尺度残差量化 tokenizer 与掩码 token EEG 基座。",
+      "use": "频率分解、分层 RVQ、相位感知重建和下游迁移。",
+      "caveat": "当前 README 主要说明 tokenizer/基座推理及微调；完整从零训练入口需补核。非商业授权需确认。",
+      "priority": "P1",
+      "scratch": "模型/推理/微调已公开，完整预训练待核",
+      "sources": [
+        "https://github.com/KonstantinosBarmpas/NeuroRVQ"
+      ],
+      "id": "konstantinosbarmpas--neurorvq",
+      "url": "https://github.com/KonstantinosBarmpas/NeuroRVQ",
+      "checkedAt": "2026-10-24",
+      "pushedAt": "2026-08-06T14:52:55Z",
+      "commit": "926e770d9d16b6aa308404280fa0cc0211a6f9fb",
+      "archived": false,
+      "license": "NOASSERTION",
+      "licenseLabel": "自定义条款 / 待核",
+      "licenseClass": "unclear",
+      "readiness": "pretrain"
+    },
+    {
+      "name": "Gram",
+      "repo": "iiieeeve/Gram",
+      "category": "基座与预训练",
+      "tracks": [
+        "信号可靠性",
+        "全赛道"
+      ],
+      "year": 2025,
+      "description": "同时面向 EEG 分类与信号修复的通用模型。",
+      "use": "run_pretrain.sh、量化阶段、可变 montage 与 gen_data.py 修复。",
+      "caveat": "原版含非公开医院数据；决赛仅能用官方指定数据，量化阶段也须重新训练。",
+      "priority": "P1",
+      "scratch": "已公开预训练入口",
+      "sources": [
+        "https://github.com/iiieeeve/Gram"
+      ],
+      "id": "iiieeeve--gram",
+      "url": "https://github.com/iiieeeve/Gram",
+      "checkedAt": "2026-10-24",
+      "pushedAt": "2026-01-23T08:17:25Z",
+      "commit": "86e17e74a8cc4124dc207516829f5974f3a0abd1",
+      "archived": false,
+      "license": "UNKNOWN",
+      "licenseLabel": "未明确许可",
+      "licenseClass": "unclear",
+      "readiness": "pretrain"
+    },
+    {
+      "name": "EEGDM",
+      "repo": "jhpuah/EEGDM",
+      "category": "基座与预训练",
+      "tracks": [
+        "疾病",
+        "信号可靠性",
+        "全赛道"
+      ],
+      "year": 2025,
+      "description": "利用结构化状态空间扩散模型学习 EEG 表征。",
+      "use": "main.py pretrain=base、扩散目标与下游潜表示融合。",
+      "caveat": "新预印本与公开代码版本可能不同；以当前配置为准，勿把 README 自报排名等同本赛成绩。",
+      "priority": "P1",
+      "scratch": "已公开预训练入口",
+      "sources": [
+        "https://github.com/jhpuah/EEGDM"
+      ],
+      "id": "jhpuah--eegdm",
+      "url": "https://github.com/jhpuah/EEGDM",
+      "checkedAt": "2026-10-24",
+      "pushedAt": "2026-06-08T05:06:20Z",
+      "commit": "003b5a2a016b2f02788ea5693d8b7cd00b6bd969",
+      "archived": false,
+      "license": "UNKNOWN",
+      "licenseLabel": "未明确许可",
+      "licenseClass": "unclear",
+      "readiness": "pretrain"
+    },
+    {
+      "name": "ZUNA1.1",
+      "repo": "Zyphra/zuna",
+      "category": "基座与预训练",
+      "tracks": [
+        "信号可靠性"
+      ],
+      "year": 2026,
+      "description": "2026 年更新的坐标感知 EEG 去噪、补通道和超分辨率模型。",
+      "use": "4D 位置编码、缺失模式设计与信号可靠性评估。",
+      "caveat": "官方仓库定位推理包，首次运行会自动下载公开权重；不能直接作为决赛清洗器使用。",
+      "priority": "P2",
+      "scratch": "推理与架构，未见完整从零训练入口",
+      "sources": [
+        "https://github.com/Zyphra/zuna"
+      ],
+      "id": "zyphra--zuna",
+      "url": "https://github.com/Zyphra/zuna",
+      "checkedAt": "2026-10-24",
+      "pushedAt": "2026-09-24T18:32:37Z",
+      "commit": "c7b0195252e197bf0d1f9a0cebbb602ed0b69284",
+      "archived": false,
+      "license": "NOASSERTION",
+      "licenseLabel": "自定义条款 / 待核",
+      "licenseClass": "unclear",
+      "readiness": "partial"
+    },
+    {
+      "name": "SpecMoE",
+      "repo": "TeraXj78/SpecMoE",
+      "category": "基座与预训练",
+      "tracks": [
+        "全赛道"
+      ],
+      "year": 2026,
+      "description": "STFT 高斯掩码与频谱门控专家的 EEG 表征模型。",
+      "use": "Pretraining_main.py、时频联合掩码、专家训练与聚合。",
+      "caveat": "原方案含跨物种数据；决赛不能因此引入未获准语料，需核对代码许可证。",
+      "priority": "P1",
+      "scratch": "已公开预训练入口",
+      "sources": [
+        "https://github.com/TeraXj78/SpecMoE"
+      ],
+      "id": "teraxj78--specmoe",
+      "url": "https://github.com/TeraXj78/SpecMoE",
+      "checkedAt": "2026-10-24",
+      "pushedAt": "2026-07-30T09:35:43Z",
+      "commit": "58e3baa0a0ca4a1e90db4adc1856ff8d531aaf12",
+      "archived": false,
+      "license": "NOASSERTION",
+      "licenseLabel": "自定义条款 / 待核",
+      "licenseClass": "unclear",
+      "readiness": "pretrain"
+    },
+    {
+      "name": "KAST-BAR",
+      "repo": "KAST-BAR/KAST-BAR",
+      "category": "基座与预训练",
+      "tracks": [
+        "全赛道"
+      ],
+      "year": 2026,
+      "description": "拓扑 tokenizer、语义描述与自回归 EEG 预训练。",
+      "use": "DSHA 编码器、拓扑聚合、train_pretrain_KAST_BAR.py。",
+      "caveat": "原流程使用冻结 Qwen 等 LLM 生成语义锚；其权重及生成标签不应默认为决赛允许。",
+      "priority": "P2",
+      "scratch": "已公开预训练入口",
+      "sources": [
+        "https://github.com/KAST-BAR/KAST-BAR"
+      ],
+      "id": "kast-bar--kast-bar",
+      "url": "https://github.com/KAST-BAR/KAST-BAR",
+      "checkedAt": "2026-10-24",
+      "pushedAt": "2026-06-08T02:51:14Z",
+      "commit": "53d262ce4acff0f3d5da221408686b55d6341e28",
+      "archived": false,
+      "license": "MIT",
+      "licenseLabel": "MIT",
+      "licenseClass": "open",
+      "readiness": "pretrain"
+    },
+    {
+      "name": "SAMBA",
+      "repo": "Jiazhen-Hong/SAMBA",
+      "category": "基座与预训练",
+      "tracks": [
+        "睡眠",
+        "认知情绪",
+        "全赛道"
+      ],
+      "year": 2026,
+      "description": "差分 Mamba 与电极坐标空间嵌入的长序列模型。",
+      "use": "Main(SAMBA).py、长序列掩码重建、Mamba/坐标模块。",
+      "caveat": "作者 README 于 2026 年 10 月更新；论文接受情况为作者自述，依赖与训练配方需自行复现。",
+      "priority": "P1",
+      "scratch": "有模型与训练入口，配方需适配",
+      "sources": [
+        "https://github.com/Jiazhen-Hong/SAMBA"
+      ],
+      "id": "jiazhen-hong--samba",
+      "url": "https://github.com/Jiazhen-Hong/SAMBA",
+      "checkedAt": "2026-10-24",
+      "pushedAt": "2026-10-11T23:18:08Z",
+      "commit": "2a2e62e3b57bed619bcc56e795577794fd555442",
+      "archived": false,
+      "license": "UNKNOWN",
+      "licenseLabel": "未明确许可",
+      "licenseClass": "unclear",
+      "readiness": "pretrain"
+    },
+    {
+      "name": "TFM-Tokenizer",
+      "repo": "Jathurshan0330/TFM-Tokenizer",
+      "category": "基座与预训练",
+      "tracks": [
+        "全赛道"
+      ],
+      "year": 2026,
+      "description": "ICLR 2026 时频 motif tokenizer，以双路径和时频掩码学习单通道 EEG 词表。",
+      "use": "复用单数据集/多数据集 tokenizer 训练脚本、编码器预训练与下游微调。",
+      "caveat": "tokenizer 和码本也必须在官方允许数据上重新训练；原文训练集不等于竞赛允许列表。",
+      "priority": "P1",
+      "scratch": "已公开 tokenizer 与预训练入口",
+      "sources": [
+        "https://github.com/Jathurshan0330/TFM-Tokenizer",
+        "https://arxiv.org/abs/2502.16060",
+        "https://openreview.net/forum?id=2sPmWHZ8Ir"
+      ],
+      "id": "jathurshan0330--tfm-tokenizer",
+      "url": "https://github.com/Jathurshan0330/TFM-Tokenizer",
+      "checkedAt": "2026-10-24",
+      "pushedAt": "2026-04-22T23:33:49Z",
+      "commit": "2d6da482b16dabbb2ebec808fa9f505fc6f367c4",
+      "archived": false,
+      "license": "MIT",
+      "licenseLabel": "MIT",
+      "licenseClass": "open",
+      "readiness": "pretrain"
+    },
+    {
+      "name": "LEAD",
+      "repo": "DL4mHealth/LEAD",
+      "category": "基座与预训练",
+      "tracks": [
+        "全赛道"
+      ],
+      "year": 2026,
+      "description": "TMLR 2026 EEG 基座，使用门控时空 Transformer、采样率及三维电极位置嵌入。",
+      "use": "复用 run.py、批量实验脚本、预训练/微调流程及受试者级聚合方法。",
+      "caveat": "当前代码不同于早期论文版本；预处理默认使用 ICLabel 等已训练模型，需要审查或替换；源数据、公开权重及许可证限制需分别核对。",
+      "priority": "P1",
+      "scratch": "已公开预训练与微调入口",
+      "sources": [
+        "https://github.com/DL4mHealth/LEAD",
+        "https://arxiv.org/abs/2502.01678"
+      ],
+      "id": "dl4mhealth--lead",
+      "url": "https://github.com/DL4mHealth/LEAD",
+      "checkedAt": "2026-10-24",
+      "pushedAt": "2026-10-01T20:56:56Z",
+      "commit": "c7e21e112a3965b09604b2098e93095880a940dd",
+      "archived": false,
+      "license": "NOASSERTION",
+      "licenseLabel": "自定义条款 / 待核",
+      "licenseClass": "unclear",
+      "readiness": "pretrain"
+    },
+    {
+      "name": "SleepFM-Clinical",
+      "repo": "zou-group/sleepfm-clinical",
+      "category": "基座与预训练",
+      "tracks": [
+        "睡眠",
+        "疾病"
+      ],
+      "year": 2026,
+      "description": "Nature Medicine 2026 多模态睡眠基座，用对比学习和 SetTransformer 表示 PSG。",
+      "use": "复用 sleepfm/pipeline/pretrain.py、MESA 示例处理、睡眠分期与疾病风险适配。",
+      "caveat": "代码为 CC BY-NC 4.0；多模态输入是否可得需核对，公开权重和 Stanford 等原训练数据不能直接用于决赛。",
+      "priority": "P1",
+      "scratch": "已公开预训练入口",
+      "license": "NOASSERTION",
+      "sources": [
+        "https://github.com/zou-group/sleepfm-clinical",
+        "https://www.nature.com/articles/s41591-025-04133-4"
+      ],
+      "id": "zou-group--sleepfm-clinical",
+      "url": "https://github.com/zou-group/sleepfm-clinical",
+      "checkedAt": "2026-10-24",
+      "pushedAt": "2026-03-07T01:02:04Z",
+      "commit": "2bcbae04c3592f61352addb7ac3d4193f0a3ca25",
+      "archived": false,
+      "licenseLabel": "CC-BY-NC-4.0 · 非商业",
+      "licenseClass": "restricted",
+      "readiness": "pretrain"
+    },
+    {
+      "name": "SleepFM（ICML 2024 原版）",
+      "repo": "rthapa84/sleepfm-codebase",
+      "category": "基座与预训练",
+      "tracks": [
+        "睡眠"
+      ],
+      "year": 2024,
+      "description": "较早的多模态睡眠对比学习实现，使用 1D CNN 与跨模态表征。",
+      "use": "复用 CinC2018 示例预处理、2_pretrain.py、嵌入生成及线性分类评估，作为较轻基线。",
+      "caveat": "原始内部训练库未公开；需要 EEG、心脏和呼吸模态，缺少模态时需改造，训练数据须限制为竞赛允许范围。",
+      "priority": "P2",
+      "scratch": "已公开示例预训练流程",
+      "license": "MIT",
+      "sources": [
+        "https://github.com/rthapa84/sleepfm-codebase",
+        "https://arxiv.org/abs/2405.17766"
+      ],
+      "id": "rthapa84--sleepfm-codebase",
+      "url": "https://github.com/rthapa84/sleepfm-codebase",
+      "checkedAt": "2026-10-24",
+      "pushedAt": "2024-06-06T00:43:51Z",
+      "commit": "a886960f5b6977bc525b0aacdd8811e5529d8fa3",
+      "archived": false,
+      "licenseLabel": "MIT",
+      "licenseClass": "open",
+      "readiness": "pretrain"
+    },
+    {
+      "name": "SleepGPT",
+      "repo": "LordXX505/SleepGPT",
+      "category": "基座与预训练",
+      "tracks": [
+        "睡眠"
+      ],
+      "year": 2026,
+      "description": "Nature Communications 2026 时频融合睡眠基座，面向分期、纺锤波和 PSG 解码。",
+      "use": "复用 backbone_pretrain.py、main.py、交叉验证及掩码重建配置。",
+      "caveat": "须取消公开 checkpoint/load_path 并从零训练；原配置依赖 SHHS 等数据和 Slurm/Lightning，需改为竞赛数据及运行环境；许可证以仓库核验为准。",
+      "priority": "P1",
+      "scratch": "已公开预训练入口",
+      "sources": [
+        "https://github.com/LordXX505/SleepGPT",
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC12858790/"
+      ],
+      "id": "lordxx505--sleepgpt",
+      "url": "https://github.com/LordXX505/SleepGPT",
+      "checkedAt": "2026-10-24",
+      "pushedAt": "2026-04-23T09:43:00Z",
+      "commit": "fcbb2c7a6489b5742ab77d66483661e45a4aadf2",
+      "archived": false,
+      "license": "UNKNOWN",
+      "licenseLabel": "未明确许可",
+      "licenseClass": "unclear",
+      "readiness": "pretrain"
+    },
+    {
+      "name": "MIRepNet",
+      "repo": "staraink/MIRepNet",
+      "category": "基座与预训练",
+      "tracks": [
+        "运动想象"
+      ],
+      "year": 2026,
+      "description": "面向运动想象的专用表征模型，以通道模板对齐不同 EEG 设备。",
+      "use": "复用模型、预处理、MOABB 读取与 finetune.py，也可比较其专用架构。",
+      "caveat": "当前作者仓库只有模型、预处理与微调入口，未见完整预训练流程；论文混合有标签和无标签目标，监督标签使用范围须核对。",
+      "priority": "P1",
+      "scratch": "未公开可核验的完整预训练入口",
+      "license": "MIT",
+      "sources": [
+        "https://github.com/staraink/MIRepNet",
+        "https://arxiv.org/abs/2507.20254",
+        "https://doi.org/10.1016/j.knosys.2026.115966"
+      ],
+      "id": "staraink--mirepnet",
+      "url": "https://github.com/staraink/MIRepNet",
+      "checkedAt": "2026-10-24",
+      "pushedAt": "2026-09-19T07:28:36Z",
+      "commit": "b35d113cd7b1629b1e0f35a5f2495ee15c69c291",
+      "archived": false,
+      "licenseLabel": "MIT",
+      "licenseClass": "open",
+      "readiness": "partial"
+    },
+    {
+      "name": "ContraWR",
+      "repo": "ycq091044/ContraWR",
+      "category": "基座与预训练",
+      "tracks": [
+        "睡眠",
+        "全赛道"
+      ],
+      "year": 2023,
+      "description": "基于频谱输入的 EEG 对比自监督方法，适合作为较轻量的受控基线。",
+      "use": "复用 self_supervised.py、Sleep-EDF/SHHS 数据处理和监督对照训练。",
+      "caveat": "原数据拆分及处理配置需要替换为比赛协议；所有模型从随机初始化训练，并避免同一受试者窗口跨训练/验证泄漏。",
+      "priority": "P2",
+      "scratch": "已公开自监督训练入口",
+      "sources": [
+        "https://github.com/ycq091044/ContraWR"
+      ],
+      "id": "ycq091044--contrawr",
+      "url": "https://github.com/ycq091044/ContraWR",
+      "checkedAt": "2026-10-24",
+      "pushedAt": "2023-06-02T17:52:02Z",
+      "commit": "217753a5711e1d753d7295b4eb9f35701f2739c8",
+      "archived": false,
+      "license": "UNKNOWN",
+      "licenseLabel": "未明确许可",
+      "licenseClass": "unclear",
+      "readiness": "pretrain"
+    },
+    {
+      "name": "TS-TCC",
+      "repo": "emadeldeen24/TS-TCC",
+      "category": "基座与预训练",
+      "tracks": [
+        "全赛道"
+      ],
+      "year": 2021,
+      "description": "时间序列时间/上下文对比学习方法，包含睡眠和癫痫数据实验。",
+      "use": "复用强弱数据增强、时序预测和 main.py 自监督、微调与线性探针模式。",
+      "caveat": "这是通用自监督基线；需调整 EEG 增强的生理合理性，并重新实现竞赛数据读取及受试者划分。",
+      "priority": "P2",
+      "scratch": "已公开自监督训练入口",
+      "sources": [
+        "https://github.com/emadeldeen24/TS-TCC",
+        "https://www.ijcai.org/proceedings/2021/0324.pdf"
+      ],
+      "id": "emadeldeen24--ts-tcc",
+      "url": "https://github.com/emadeldeen24/TS-TCC",
+      "checkedAt": "2026-10-24",
+      "pushedAt": "2024-03-31T04:55:38Z",
+      "commit": "15bdfd6eced6aeb6c638839828effe1b4b2ea391",
+      "archived": false,
+      "license": "MIT",
+      "licenseLabel": "MIT",
+      "licenseClass": "open",
+      "readiness": "pretrain"
+    },
+    {
+      "category": "任务方法",
+      "name": "EEGdenoiseNet",
+      "repo": "ncclabsustech/EEGdenoiseNet",
+      "tracks": [
+        "信号可靠性"
+      ],
+      "year": 2020,
+      "description": "EEG 去伪迹基准与经典神经网络实现。",
+      "use": "复用干净信号与 EOG/EMG 的混合方法、不同 SNR 的评测和去噪网络。",
+      "caveat": "原始数据不能默认纳入指定 21 个数据集；代码依赖较旧的 TensorFlow 2.2 / Python 3.6，需要迁移。",
+      "priority": "P1",
+      "scratch": "可重训",
+      "status": "代码与数据生成流程已公开",
+      "sources": [
+        "https://github.com/ncclabsustech/EEGdenoiseNet",
+        "https://arxiv.org/abs/2009.11662"
+      ],
+      "id": "ncclabsustech--eegdenoisenet",
+      "url": "https://github.com/ncclabsustech/EEGdenoiseNet",
+      "checkedAt": "2026-10-24",
+      "pushedAt": "2023-07-19T04:18:02Z",
+      "commit": "8d290661146c7189c98cc04812d37371d4b9426c",
+      "archived": false,
+      "license": "MIT",
+      "licenseLabel": "MIT",
+      "licenseClass": "open",
+      "readiness": "task"
+    },
+    {
+      "category": "任务方法",
+      "name": "DeepSeparator",
+      "repo": "ncclabsustech/DeepSeparator",
+      "tracks": [
+        "信号可靠性"
+      ],
+      "year": null,
+      "description": "将 EEG 与伪迹在隐空间中分离，再重建信号。",
+      "use": "复用 encoder–decomposer–decoder 结构、伪迹合成与 train.py，作为可靠性赛道或辅助预训练目标。",
+      "caveat": "需在获准数据上重新训练；仓库首页未显示许可证，不能把公开可见等同于获准复制。",
+      "priority": "P1",
+      "scratch": "可重训",
+      "status": "训练、预测、数据生成代码已公开",
+      "sources": [
+        "https://github.com/ncclabsustech/DeepSeparator",
+        "https://raw.githubusercontent.com/ncclabsustech/DeepSeparator/main/README.md"
+      ],
+      "id": "ncclabsustech--deepseparator",
+      "url": "https://github.com/ncclabsustech/DeepSeparator",
+      "checkedAt": "2026-10-24",
+      "pushedAt": "2022-06-16T11:15:03Z",
+      "commit": "7dca7dc5116c874500f798eb21f29a0b40b2c385",
+      "archived": false,
+      "license": "UNKNOWN",
+      "licenseLabel": "未明确许可",
+      "licenseClass": "unclear",
+      "readiness": "task"
+    },
+    {
+      "category": "任务方法",
+      "name": "U-Time / U-Sleep",
+      "repo": "perslev/U-Time",
+      "tracks": [
+        "睡眠"
+      ],
+      "year": 2021,
+      "description": "支持多数据集与不同输入通道组合的全卷积睡眠分期系统。",
+      "use": "复用长序列分段、随机通道组合、HDF5 数据流、按被试划分和完整训练评测 CLI。",
+      "caveat": "可自行训练，但不能调用公开 U-Sleep 权重或在线服务替代决赛从零训练；原 PSG 数据不自动获准。",
+      "priority": "P1",
+      "scratch": "可重训",
+      "status": "完整训练评测流程",
+      "license": "MIT",
+      "sources": [
+        "https://github.com/perslev/U-Time",
+        "https://raw.githubusercontent.com/perslev/U-Time/main/README.md"
+      ],
+      "id": "perslev--u-time",
+      "url": "https://github.com/perslev/U-Time",
+      "checkedAt": "2026-10-24",
+      "pushedAt": "2026-06-24T21:33:18Z",
+      "commit": "7fc4cbf79e5454661f1c0d0768886e4dfbe9d42a",
+      "archived": false,
+      "licenseLabel": "MIT",
+      "licenseClass": "open",
+      "readiness": "task"
+    },
+    {
+      "category": "任务方法",
+      "name": "AttnSleep",
+      "repo": "emadeldeen24/AttnSleep",
+      "tracks": [
+        "睡眠"
+      ],
+      "year": 2021,
+      "description": "单通道 EEG 的多尺度卷积与时序注意力分期基线。",
+      "use": "复用 MRCNN、特征重标定与 TCE 编码器，以及类别不平衡训练和交叉验证入口。",
+      "caveat": "原环境为 PyTorch 1.4、MNE 0.20.7；须迁移，并把原数据划分替换为官方被试划分。",
+      "priority": "P1",
+      "scratch": "可重训",
+      "status": "模型、训练、预处理已公开",
+      "sources": [
+        "https://github.com/emadeldeen24/AttnSleep"
+      ],
+      "id": "emadeldeen24--attnsleep",
+      "url": "https://github.com/emadeldeen24/AttnSleep",
+      "checkedAt": "2026-10-24",
+      "pushedAt": "2023-09-26T06:43:37Z",
+      "commit": "6b4d2665884628c8a7bb09f36589a8ec0992f8e2",
+      "archived": false,
+      "license": "MIT",
+      "licenseLabel": "MIT",
+      "licenseClass": "open",
+      "readiness": "task"
+    },
+    {
+      "category": "任务方法",
+      "name": "StageGuard",
+      "repo": "Q9gJYx/StageGuard",
+      "tracks": [
+        "睡眠"
+      ],
+      "year": 2026,
+      "description": "KDD 2026：为神经睡眠分期加入生理约束。",
+      "use": "可将转移和片段约束接在自己的睡眠 backbone 上；提供配置、训练、测试与复现说明。",
+      "caveat": "示例含小鼠 EEG，不能直接照搬状态定义；须核对人类睡眠任务、标签与官方是否允许后处理。",
+      "priority": "P1",
+      "scratch": "可重训",
+      "status": "核心库、脚本和测试已公开",
+      "license": "MIT",
+      "sources": [
+        "https://github.com/Q9gJYx/StageGuard",
+        "https://doi.org/10.1145/3770855.3818916"
+      ],
+      "id": "q9gjyx--stageguard",
+      "url": "https://github.com/Q9gJYx/StageGuard",
+      "checkedAt": "2026-10-24",
+      "pushedAt": "2026-10-21T03:47:35Z",
+      "commit": "53ac917f2817bc03a1d33d3a848d68ab4ab91fb2",
+      "archived": false,
+      "licenseLabel": "MIT",
+      "licenseClass": "open",
+      "readiness": "task"
+    },
+    {
+      "category": "任务方法",
+      "name": "MSTSSleepNet",
+      "repo": "BciJ/MSTSSleepNet",
+      "tracks": [
+        "睡眠"
+      ],
+      "year": 2026,
+      "description": "2026 年轻量睡眠网络，联合时间、频率及通道空间结构。",
+      "use": "复用多尺度 Sinc 滤波、时频融合和空间卷积模块，构建低算力睡眠头。",
+      "caveat": "核查时仓库仅 README、架构图和 models.py，没有完整训练/数据处理流水线；许可证待核。",
+      "priority": "P2",
+      "scratch": "需补训练脚本",
+      "status": "仅模型实现",
+      "sources": [
+        "https://github.com/BciJ/MSTSSleepNet",
+        "https://doi.org/10.1016/j.eswa.2026.133265"
+      ],
+      "id": "bcij--mstssleepnet",
+      "url": "https://github.com/BciJ/MSTSSleepNet",
+      "checkedAt": "2026-10-24",
+      "pushedAt": "2026-06-23T07:19:58Z",
+      "commit": "736f75e0608968ffef2b73f1d928a991b63ad7a0",
+      "archived": false,
+      "license": "UNKNOWN",
+      "licenseLabel": "未明确许可",
+      "licenseClass": "unclear",
+      "readiness": "partial"
+    },
+    {
+      "category": "任务方法",
+      "name": "SeizureTransformer",
+      "repo": "keruiwu/SeizureTransformer",
+      "tracks": [
+        "疾病",
+        "睡眠"
+      ],
+      "year": 2025,
+      "description": "不依赖预训练的 EEG U-Transformer，支持时间步检测和窗口分类。",
+      "use": "复用 U 形卷积与注意力结构、时间步预测及 attention pooling，建立疾病赛道强监督基线。",
+      "caveat": "公开 Docker 镜像可能含已训练参数；决赛应从源码初始化并使用官方数据，不能直接采用镜像模型。",
+      "priority": "P1",
+      "scratch": "明确支持从零训练",
+      "status": "时间步与窗口代码已公开",
+      "license": "MIT",
+      "sources": [
+        "https://github.com/keruiwu/SeizureTransformer",
+        "https://arxiv.org/abs/2504.00336"
+      ],
+      "id": "keruiwu--seizuretransformer",
+      "url": "https://github.com/keruiwu/SeizureTransformer",
+      "checkedAt": "2026-10-24",
+      "pushedAt": "2025-10-07T07:11:56Z",
+      "commit": "cf83f5906a8aea88b60b56e4f962c5d6657c28f7",
+      "archived": false,
+      "licenseLabel": "MIT",
+      "licenseClass": "open",
+      "readiness": "task"
+    },
+    {
+      "category": "任务方法",
+      "name": "EEG-GNN-SSL",
+      "repo": "tsy935/eeg-gnn-ssl",
+      "tracks": [
+        "疾病"
+      ],
+      "year": 2022,
+      "description": "ICLR 2022：以图网络建模电极关系并预测未来 EEG 片段。",
+      "use": "复用距离图/相关图、DCRNN、自监督未来片段预测与癫痫检测、分类训练代码。",
+      "caveat": "仓库提供预训练 checkpoint，决赛需跳过；TUSZ 原划分与数据权限不能代替赛事规则。",
+      "priority": "P1",
+      "scratch": "明确支持从零训练",
+      "status": "预训练、监督训练与基线代码已公开",
+      "license": "UNKNOWN",
+      "sources": [
+        "https://github.com/tsy935/eeg-gnn-ssl",
+        "https://openreview.net/forum?id=k9bx1EfHI_-"
+      ],
+      "id": "tsy935--eeg-gnn-ssl",
+      "url": "https://github.com/tsy935/eeg-gnn-ssl",
+      "checkedAt": "2026-10-24",
+      "pushedAt": "2022-11-03T23:40:35Z",
+      "commit": "3e60b231a8801d1da9380f82ffd11faa5fa5cb05",
+      "archived": false,
+      "licenseLabel": "MIT（已读 LICENSE）",
+      "licenseClass": "open",
+      "readiness": "task"
+    },
+    {
+      "category": "任务方法",
+      "name": "LibEER",
+      "repo": "XJTU-EEG/LibEER",
+      "tracks": [
+        "认知情绪"
+      ],
+      "year": 2025,
+      "description": "2025 EEG 情绪识别基准与算法库，覆盖 CNN、GNN、RNN 和 Transformer。",
+      "use": "复用 DE 特征、模型实现、被试独立划分、训练评测；便于统一比较 RGNN、DGCNN、TSception 等方法。",
+      "caveat": "默认支持的 SEED/DEAP/FACED 等数据需分别获准；使用官方划分替换示例划分，不能混用被试内结果。",
+      "priority": "P0",
+      "scratch": "可重训",
+      "status": "多模型和完整流程已公开",
+      "license": "MIT",
+      "sources": [
+        "https://github.com/XJTU-EEG/LibEER",
+        "https://github.com/XJTU-EEG/LibEER/blob/main/docs/PresetSetting.md"
+      ],
+      "id": "xjtu-eeg--libeer",
+      "url": "https://github.com/XJTU-EEG/LibEER",
+      "checkedAt": "2026-10-24",
+      "pushedAt": "2026-03-18T00:56:04Z",
+      "commit": "dddff9776dbdae21195fe320dff0a5ba61628a18",
+      "archived": false,
+      "licenseLabel": "MIT",
+      "licenseClass": "open",
+      "readiness": "task"
+    },
+    {
+      "category": "任务方法",
+      "name": "HDGNet",
+      "repo": "affctivai/HDGNet",
+      "tracks": [
+        "认知情绪"
+      ],
+      "year": 2025,
+      "description": "2025 分层动态局部–全局图情绪表征模型。",
+      "use": "复用局部脑区与全局电极的动态图建模，适合情绪任务的空间关系消融。",
+      "caveat": "依赖数据集特征和通道结构；需重做官方跨被试划分，并检查复用代码的具体许可证。",
+      "priority": "P1",
+      "scratch": "可重训",
+      "status": "实现目录与训练说明已公开",
+      "sources": [
+        "https://github.com/affctivai/HDGNet",
+        "https://github.com/affctivai/HDGNet/blob/main/README.md"
+      ],
+      "id": "affctivai--hdgnet",
+      "url": "https://github.com/affctivai/HDGNet",
+      "checkedAt": "2026-10-24",
+      "pushedAt": "2025-12-09T10:48:44Z",
+      "commit": "a89373d3331454af59f497e39d4d6b4e3292d90a",
+      "archived": false,
+      "license": "UNKNOWN",
+      "licenseLabel": "未明确许可",
+      "licenseClass": "unclear",
+      "readiness": "task"
+    },
+    {
+      "category": "任务方法",
+      "name": "MSGM",
+      "repo": "hanwenliu6825/MSGM",
+      "tracks": [
+        "认知情绪"
+      ],
+      "year": 2026,
+      "description": "2026 多尺度时空 Graph Mamba 情绪识别。",
+      "use": "复用 rPSD 多窗口特征、空间先验、图编码和 Mamba 融合，探索较低时序计算成本。",
+      "caveat": "公开内容以 model.py、预处理与合成输入前向示例为主，需自行补齐比赛训练评测；不同 montage 要调整脑区映射。",
+      "priority": "P2",
+      "scratch": "需补完整训练流程",
+      "status": "模型与特征处理已公开",
+      "sources": [
+        "https://github.com/hanwenliu6825/MSGM",
+        "https://www.frontiersin.org/journals/neuroscience/articles/10.3389/fnins.2026.1665145/full"
+      ],
+      "id": "hanwenliu6825--msgm",
+      "url": "https://github.com/hanwenliu6825/MSGM",
+      "checkedAt": "2026-10-24",
+      "pushedAt": "2026-06-05T14:01:52Z",
+      "commit": "b0c6472fb9b6d5288f936293371361aeb39d1d09",
+      "archived": false,
+      "license": "MIT",
+      "licenseLabel": "MIT",
+      "licenseClass": "open",
+      "readiness": "partial"
+    },
+    {
+      "category": "任务方法",
+      "name": "EEGNet / ARL EEGModels",
+      "repo": "vlawhern/arl-eegmodels",
+      "tracks": [
+        "运动想象",
+        "SSVEP",
+        "认知情绪"
+      ],
+      "year": 2018,
+      "description": "轻量 EEGNet 及 ShallowConvNet、DeepConvNet 的经典实现。",
+      "use": "低成本建立跨赛道监督基线，复用深度可分离时空卷积与 SSVEP 变体。",
+      "caveat": "原仓库为 Keras/TensorFlow；可比较 Braindecode 移植版本，随机初始化训练。README 标示 CC0 与部分 Apache 2.0 条款并存。",
+      "priority": "P0",
+      "scratch": "可重训",
+      "status": "模型源码与示例已公开",
+      "license": "NOASSERTION",
+      "sources": [
+        "https://github.com/vlawhern/arl-eegmodels",
+        "https://raw.githubusercontent.com/vlawhern/arl-eegmodels/master/README.md"
+      ],
+      "id": "vlawhern--arl-eegmodels",
+      "url": "https://github.com/vlawhern/arl-eegmodels",
+      "checkedAt": "2026-10-24",
+      "pushedAt": "2022-05-02T12:46:03Z",
+      "commit": "4a512e503198db2010848813ead9afbf8cd54c97",
+      "archived": false,
+      "licenseLabel": "CC0 / Apache-2.0（分部件）",
+      "licenseClass": "open",
+      "readiness": "task"
+    },
+    {
+      "category": "任务方法",
+      "name": "EEG-Conformer",
+      "repo": "eeyhsong/EEG-Conformer",
+      "tracks": [
+        "运动想象",
+        "认知情绪"
+      ],
+      "year": 2023,
+      "description": "卷积前端与 Transformer 结合的 EEG 解码基线。",
+      "use": "复用局部时空卷积、全局注意力和类激活拓扑可视化；适合作为统一 backbone 的小规模起点。",
+      "caveat": "GPL-3.0 的代码分发要求需落实；原通道数、窗口长度和增强划分要适配官方数据。",
+      "priority": "P0",
+      "scratch": "可重训",
+      "status": "模型和预处理已公开",
+      "license": "GPL-3.0",
+      "sources": [
+        "https://github.com/eeyhsong/EEG-Conformer"
+      ],
+      "id": "eeyhsong--eeg-conformer",
+      "url": "https://github.com/eeyhsong/EEG-Conformer",
+      "checkedAt": "2026-10-24",
+      "pushedAt": "2024-07-24T14:39:20Z",
+      "commit": "9ae149ba62487ceae723277d13adac27837113d2",
+      "archived": false,
+      "licenseLabel": "GPL-3.0",
+      "licenseClass": "open",
+      "readiness": "task"
+    },
+    {
+      "category": "任务方法",
+      "name": "EEG-ATCNet",
+      "repo": "Altaheri/EEG-ATCNet",
+      "tracks": [
+        "运动想象"
+      ],
+      "year": 2022,
+      "description": "时空卷积、滑动窗口注意力与 TCN 的运动想象网络。",
+      "use": "复用低算力监督基线和滑窗特征融合，比较 CNN / Attention / TCN 的贡献。",
+      "caveat": "作者提示旧 main_TrainTest.py 不符合当前最佳评测实践，应采用 main_TrainValTest.py；决赛仍用官方划分。",
+      "priority": "P1",
+      "scratch": "可重训",
+      "status": "训练、模型、预处理已公开",
+      "license": "Apache-2.0",
+      "sources": [
+        "https://github.com/Altaheri/EEG-ATCNet"
+      ],
+      "id": "altaheri--eeg-atcnet",
+      "url": "https://github.com/Altaheri/EEG-ATCNet",
+      "checkedAt": "2026-10-24",
+      "pushedAt": "2026-08-16T00:38:48Z",
+      "commit": "65162fb359ea46a2f62c885a9987247ab491ee7a",
+      "archived": false,
+      "licenseLabel": "Apache-2.0",
+      "licenseClass": "open",
+      "readiness": "task"
+    },
+    {
+      "category": "任务方法",
+      "name": "TCFormer",
+      "repo": "Altaheri/TCFormer",
+      "tracks": [
+        "运动想象"
+      ],
+      "year": 2025,
+      "description": "2025 多核 CNN、GQA/RoPE Transformer 与 TCN 的组合模型。",
+      "use": "复用 PyTorch MI 网络、LOSO 评测、增强和按被试/种子汇总，适合现代监督对照。",
+      "caveat": "原流水线会自动下载外部数据，比赛版需关闭并换成获准数据；LOSO 协议不能替代官方 8:1:1。",
+      "priority": "P1",
+      "scratch": "可重训",
+      "status": "模型、训练与评测流水线已公开",
+      "license": "MIT",
+      "sources": [
+        "https://github.com/Altaheri/TCFormer",
+        "https://www.nature.com/articles/s41598-025-16219-7"
+      ],
+      "id": "altaheri--tcformer",
+      "url": "https://github.com/Altaheri/TCFormer",
+      "checkedAt": "2026-10-24",
+      "pushedAt": "2026-08-15T23:57:47Z",
+      "commit": "701a361640708ef1cc07cf22660d47edc6d9bf3c",
+      "archived": false,
+      "licenseLabel": "MIT",
+      "licenseClass": "open",
+      "readiness": "task"
+    },
+    {
+      "category": "任务方法",
+      "name": "SimNeXt-EEG",
+      "repo": "dhkim-kr/simnext-eeg",
+      "tracks": [
+        "运动想象"
+      ],
+      "year": 2026,
+      "description": "2026 紧凑运动想象模型，使用无参数时间注意力和可分离卷积。",
+      "use": "复用轻量时空特征与 1D-SimAM 模块，测试小模型在有限算力下的竞争力。",
+      "caveat": "默认四秒、250 Hz 输入；需适配比赛窗口和通道。代码 MIT，文档另为 CC BY 4.0。",
+      "priority": "P1",
+      "scratch": "可重训",
+      "status": "模型、训练和评测代码已公开",
+      "license": "MIT",
+      "sources": [
+        "https://github.com/dhkim-kr/simnext-eeg",
+        "https://doi.org/10.1109/LSP.2026.3727949"
+      ],
+      "id": "dhkim-kr--simnext-eeg",
+      "url": "https://github.com/dhkim-kr/simnext-eeg",
+      "checkedAt": "2026-10-24",
+      "pushedAt": "2026-09-08T04:20:09Z",
+      "commit": "6e226e10da870e06a3068063e9bc1c6a228e91ca",
+      "archived": false,
+      "licenseLabel": "MIT",
+      "licenseClass": "open",
+      "readiness": "task"
+    },
+    {
+      "category": "任务方法",
+      "name": "NICE-EEG",
+      "repo": "eeyhsong/NICE-EEG",
+      "tracks": [
+        "自然刺激解码"
+      ],
+      "year": 2024,
+      "description": "ICLR 2024 EEG–图像对比学习与视觉检索框架。",
+      "use": "复用紧凑 EEG encoder、对比目标和图像检索评测；适合理解自然视觉刺激解码。",
+      "caveat": "原目标使用预训练图像特征；即使 EEG encoder 从零训练，也不等于全流程满足决赛权重禁令。",
+      "priority": "P1",
+      "scratch": "EEG 分支可重训，视觉目标待规则确认",
+      "status": "核心网络和训练源码已公开",
+      "sources": [
+        "https://github.com/eeyhsong/NICE-EEG",
+        "https://github.com/eeyhsong/NICE-EEG/blob/main/nice_stand.py"
+      ],
+      "id": "eeyhsong--nice-eeg",
+      "url": "https://github.com/eeyhsong/NICE-EEG",
+      "checkedAt": "2026-10-24",
+      "pushedAt": "2025-07-18T07:53:47Z",
+      "commit": "a7709d81af9c4971c711b03fbee4e09e01477c4b",
+      "archived": false,
+      "license": "MIT",
+      "licenseLabel": "MIT",
+      "licenseClass": "open",
+      "readiness": "task"
+    },
+    {
+      "category": "任务方法",
+      "name": "ATM / EEG_Image_decode",
+      "repo": "ncclab-sustech/EEG_Image_decode",
+      "tracks": [
+        "自然刺激解码"
+      ],
+      "year": 2024,
+      "description": "NeurIPS 2024 EEG 视觉检索与引导扩散重建。",
+      "use": "复用 EEG 前处理、ATM 编码器、检索接口与跨被试分析；与竞赛相关实验室的代码风格较接近。",
+      "caveat": "原方案使用视觉语言模型和扩散生成器；公开权重及缓存视觉特征不可默认用于决赛，重建不一定是官方任务。",
+      "priority": "P1",
+      "scratch": "EEG 结构可重训，多模态部分受限",
+      "status": "检索、生成和预处理模块已公开",
+      "sources": [
+        "https://github.com/ncclab-sustech/EEG_Image_decode",
+        "https://arxiv.org/abs/2403.07721"
+      ],
+      "id": "ncclab-sustech--eeg_image_decode",
+      "url": "https://github.com/ncclab-sustech/EEG_Image_decode",
+      "checkedAt": "2026-10-24",
+      "pushedAt": "2026-05-10T07:24:48Z",
+      "commit": "49cb3a20a0c1fd35fd2955f78d0e4d0f2939c70d",
+      "archived": false,
+      "license": "MIT",
+      "licenseLabel": "MIT",
+      "licenseClass": "open",
+      "readiness": "task"
+    },
+    {
+      "category": "任务方法",
+      "name": "DreamDiffusion",
+      "repo": "bbaaii/DreamDiffusion",
+      "tracks": [
+        "自然刺激解码"
+      ],
+      "year": 2023,
+      "description": "EEG 掩码时序预训练结合图像扩散生成的经典实现。",
+      "use": "重点借鉴 stageA1_eeg_pretrain.py 和时序掩码重建，不必引入图像生成部分。",
+      "caveat": "完整生成链依赖 SD1.5、CLIP 和已训练 EEG 参数，不能直接用于禁止公开权重的决赛。",
+      "priority": "P2",
+      "scratch": "仅 EEG 掩码预训练部分可重训",
+      "status": "EEG 预训练与扩散脚本已公开",
+      "sources": [
+        "https://github.com/bbaaii/DreamDiffusion",
+        "https://arxiv.org/abs/2306.16934"
+      ],
+      "id": "bbaaii--dreamdiffusion",
+      "url": "https://github.com/bbaaii/DreamDiffusion",
+      "checkedAt": "2026-10-24",
+      "pushedAt": "2025-10-01T01:20:23Z",
+      "commit": "8e147972bb0ebc5e4c5975d6713be36007d33929",
+      "archived": false,
+      "license": "MIT",
+      "licenseLabel": "MIT",
+      "licenseClass": "open",
+      "readiness": "task"
+    },
+    {
+      "category": "任务方法",
+      "name": "ViEEG",
+      "repo": "LauMason/ViEEG",
+      "tracks": [
+        "自然刺激解码"
+      ],
+      "year": 2026,
+      "description": "ICML 2026 分层视觉神经表征与 EEG 图像对齐。",
+      "use": "复用层级视觉对比目标、EEG 时空编码与训练器，作为自然刺激方向的新方法参考。",
+      "caveat": "原流程提取 CLIP / ViT / ResNet 预训练视觉特征；决赛不能默认使用这些教师或缓存。",
+      "priority": "P1",
+      "scratch": "EEG 分支可重训，视觉监督受限",
+      "status": "models、engine/trainer.py 和 main.py 已公开",
+      "license": "Apache-2.0",
+      "sources": [
+        "https://github.com/LauMason/ViEEG",
+        "https://proceedings.mlr.press/v306/liu26ap.html",
+        "https://github.com/LauMason/ViEEG/tree/main/engine"
+      ],
+      "id": "laumason--vieeg",
+      "url": "https://github.com/LauMason/ViEEG",
+      "checkedAt": "2026-10-24",
+      "pushedAt": "2026-05-15T04:56:24Z",
+      "commit": "2365e1b20b8a31ce549a49e24937141ce0c579bf",
+      "archived": false,
+      "licenseLabel": "Apache-2.0",
+      "licenseClass": "open",
+      "readiness": "task"
+    },
+    {
+      "category": "任务方法",
+      "name": "NeuroBridge",
+      "repo": "feroooooo/NeuroBridge",
+      "tracks": [
+        "自然刺激解码"
+      ],
+      "year": 2026,
+      "description": "AAAI 2026 基于认知先验与双向语义对齐的 EEG 视觉解码。",
+      "use": "复用 EEG 编码、双向对齐损失、特征融合和独立 EEG 训练路径。",
+      "caveat": "原图像特征来自 OpenCLIP；即使只训练 EEG 分支，仍须解决预训练目标依赖和数据许可。",
+      "priority": "P1",
+      "scratch": "EEG 分支可重训，视觉监督受限",
+      "status": "train.py、特征提取及模块代码已公开",
+      "license": "MIT",
+      "sources": [
+        "https://github.com/feroooooo/NeuroBridge",
+        "https://ojs.aaai.org/index.php/AAAI/article/view/38863",
+        "https://github.com/feroooooo/NeuroBridge/blob/main/train.py"
+      ],
+      "id": "feroooooo--neurobridge",
+      "url": "https://github.com/feroooooo/NeuroBridge",
+      "checkedAt": "2026-10-24",
+      "pushedAt": "2026-09-03T04:43:55Z",
+      "commit": "4f59fbb9597dbc1a0a9276a984f4f4c8b43ae7d6",
+      "archived": false,
+      "licenseLabel": "MIT",
+      "licenseClass": "open",
+      "readiness": "task"
+    },
+    {
+      "category": "任务方法",
+      "name": "MindAlign",
+      "repo": "anon-eeg/eeg_image_decoding",
+      "tracks": [
+        "自然刺激解码"
+      ],
+      "year": 2026,
+      "description": "2026 EEG、图像和语言三模态对齐，包含掩码预训练。",
+      "use": "复用 Pretrain.py、EEG 通道图注意力、subject adaptation 和 LOSO 开关，设计 EEG 自监督消融。",
+      "caveat": "--no_pretrain 只跳过 EEG checkpoint，不能自动消除 CN-CLIP、LLM 文本及缓存特征依赖；首页未显示许可证。",
+      "priority": "P2",
+      "scratch": "EEG 掩码分支可重训",
+      "status": "预训练、训练、编码器源码已公开",
+      "sources": [
+        "https://github.com/anon-eeg/eeg_image_decoding",
+        "https://arxiv.org/abs/2605.24523",
+        "https://github.com/anon-eeg/eeg_image_decoding/blob/main/eeg_encoders.py"
+      ],
+      "id": "anon-eeg--eeg_image_decoding",
+      "url": "https://github.com/anon-eeg/eeg_image_decoding",
+      "checkedAt": "2026-10-24",
+      "pushedAt": "2026-05-31T06:40:17Z",
+      "commit": "41c81aef7d3a40a6d4f6fa4105aa922ae0447f9b",
+      "archived": false,
+      "license": "UNKNOWN",
+      "licenseLabel": "未明确许可",
+      "licenseClass": "unclear",
+      "readiness": "task"
+    },
+    {
+      "category": "任务方法",
+      "name": "CognitionCapturerPro",
+      "repo": "XiaoZhangYES/CognitionCapturerPro",
+      "tracks": [
+        "自然刺激解码"
+      ],
+      "year": 2026,
+      "description": "2026 仓库版本：以多模态融合与非对称对齐做 EEG/MEG 视觉重建。",
+      "use": "参考不确定性加权掩码、融合编码器与重建空间对齐；含训练和图像生成流程。",
+      "caveat": "README 引用字段仍有 TODO，发表状态未核实；依赖 OpenCLIP、SDXL-Turbo、IP-Adapter，完整链不适合直接用于决赛。",
+      "priority": "P2",
+      "scratch": "局部 EEG 模块可重训",
+      "status": "源码已公开；论文元数据不完整",
+      "license": "MIT",
+      "sources": [
+        "https://github.com/XiaoZhangYES/CognitionCapturerPro"
+      ],
+      "id": "xiaozhangyes--cognitioncapturerpro",
+      "url": "https://github.com/XiaoZhangYES/CognitionCapturerPro",
+      "checkedAt": "2026-10-24",
+      "pushedAt": "2026-07-19T09:42:12Z",
+      "commit": "cf3fc5bc6e80106f767f902de7f5a2bf78972f60",
+      "archived": false,
+      "licenseLabel": "MIT",
+      "licenseClass": "open",
+      "readiness": "task"
+    },
+    {
+      "category": "任务方法",
+      "name": "BrainFLORA",
+      "repo": "ncclab-sustech/BrainFLORA",
+      "tracks": [
+        "自然刺激解码"
+      ],
+      "year": 2025,
+      "description": "ACM MM 2025，多种脑信号的统一表征、视觉检索、重建和描述。",
+      "use": "复用 EEG/MEG 统一编码接口、检索训练、模型融合与跨模态适配思路。",
+      "caveat": "图像/语言/生成分支含外部模型依赖；比赛若仅 EEG，应抽取合适模块并全部按规则训练。",
+      "priority": "P1",
+      "scratch": "局部 EEG 编码模块可重训",
+      "status": "模型、训练、检索和评测目录已公开",
+      "sources": [
+        "https://github.com/ncclab-sustech/BrainFLORA",
+        "https://doi.org/10.1145/3746027.3754996"
+      ],
+      "id": "ncclab-sustech--brainflora",
+      "url": "https://github.com/ncclab-sustech/BrainFLORA",
+      "checkedAt": "2026-10-24",
+      "pushedAt": "2026-06-19T15:26:49Z",
+      "commit": "2b94307c4412c38698da9b2e870492b431042c95",
+      "archived": false,
+      "license": "MIT",
+      "licenseLabel": "MIT",
+      "licenseClass": "open",
+      "readiness": "task"
+    },
+    {
+      "category": "任务方法",
+      "name": "SSVEP Analysis Toolbox",
+      "repo": "pikipity/SSVEP-Analysis-Toolbox",
+      "tracks": [
+        "SSVEP"
+      ],
+      "year": 2024,
+      "description": "Python SSVEP 数据接口与空间滤波算法库。",
+      "use": "快速建立 CCA、FBCCA、TRCA、eTRCA、TDCA 等低算力对照，复用统一拟合/预测接口。",
+      "caveat": "算法本身通常不需公开神经网络权重，但模板只能用官方训练被试/试次拟合；频率、滤波和窗口须匹配赛题。",
+      "priority": "P0",
+      "scratch": "无需公开权重",
+      "status": "算法库、文档和示例已公开",
+      "sources": [
+        "https://github.com/pikipity/SSVEP-Analysis-Toolbox",
+        "https://raw.githubusercontent.com/pikipity/SSVEP-Analysis-Toolbox/main/README.md"
+      ],
+      "id": "pikipity--ssvep-analysis-toolbox",
+      "url": "https://github.com/pikipity/SSVEP-Analysis-Toolbox",
+      "checkedAt": "2026-10-24",
+      "pushedAt": "2024-07-22T05:01:47Z",
+      "commit": "3344bd199daf78888e364d9db00ae7d8128d2b5f",
+      "archived": false,
+      "license": "UNKNOWN",
+      "licenseLabel": "未明确许可",
+      "licenseClass": "unclear",
+      "readiness": "task"
+    },
+    {
+      "category": "任务方法",
+      "name": "TRCA-SSVEP",
+      "repo": "mnakanishi/TRCA-SSVEP",
+      "tracks": [
+        "SSVEP"
+      ],
+      "year": 2018,
+      "description": "TRCA 原作者的 MATLAB 参考实现，附 FBCCA 与滤波器组。",
+      "use": "验证 TRCA / FBCCA 算法正确性，建立无需深度预训练的频率识别基线。",
+      "caveat": "提供的 sample.mat 是演示数据；模板和空间滤波器必须在获准训练部分重新拟合。",
+      "priority": "P1",
+      "scratch": "无需公开权重",
+      "status": "训练、测试及教程已公开",
+      "license": "MIT",
+      "sources": [
+        "https://github.com/mnakanishi/TRCA-SSVEP",
+        "https://raw.githubusercontent.com/mnakanishi/TRCA-SSVEP/master/README.md",
+        "https://github.com/mnakanishi/TRCA-SSVEP/blob/master/LICENSE"
+      ],
+      "id": "mnakanishi--trca-ssvep",
+      "url": "https://github.com/mnakanishi/TRCA-SSVEP",
+      "checkedAt": "2026-10-24",
+      "pushedAt": "2023-12-11T02:44:57Z",
+      "commit": "35c1b8a7ebfa3774dd7266931784d04ae09f3461",
+      "archived": false,
+      "licenseLabel": "MIT",
+      "licenseClass": "open",
+      "readiness": "task"
+    },
+    {
+      "category": "任务方法",
+      "name": "SSVEP Detection Toolbox",
+      "repo": "Mohammad-Norizadeh-Cherloo/SSVEP-Detection-Toolbox",
+      "tracks": [
+        "SSVEP"
+      ],
+      "year": 2025,
+      "description": "2025 MATLAB SSVEP 工具箱，汇集多类模板与相关分析方法。",
+      "use": "比较 CCA、TRCA、CORRCA、MSI、多集合 CCA 等 19 种方法，丰富 SSVEP 专项消融。",
+      "caveat": "MATLAB 环境与 Python 统一评测需桥接；模板、频带与超参只能用允许的训练/验证数据选择。",
+      "priority": "P1",
+      "scratch": "无需公开权重",
+      "status": "算法实现、基准和 demos 已公开",
+      "sources": [
+        "https://github.com/Mohammad-Norizadeh-Cherloo/SSVEP-Detection-Toolbox"
+      ],
+      "id": "mohammad-norizadeh-cherloo--ssvep-detection-toolbox",
+      "url": "https://github.com/Mohammad-Norizadeh-Cherloo/SSVEP-Detection-Toolbox",
+      "checkedAt": "2026-10-24",
+      "pushedAt": "2026-08-30T15:09:59Z",
+      "commit": "41897610a3a0706f741a894c8f6169f61348dda2",
+      "archived": false,
+      "license": "UNKNOWN",
+      "licenseLabel": "未明确许可",
+      "licenseClass": "unclear",
+      "readiness": "task"
+    },
+    {
+      "category": "任务方法",
+      "name": "BrainMagick",
+      "repo": "facebookresearch/brainmagick",
+      "tracks": [
+        "自然刺激解码"
+      ],
+      "year": 2023,
+      "description": "EEG/MEG 语音感知解码与对比学习训练框架。",
+      "use": "补充自然听觉刺激路线，复用时序卷积编码、脑信号与语音对齐及多数据集处理。",
+      "caveat": "仓库已归档；原语音表征依赖预训练模型。许可证为 CC BY-NC 4.0，不能按宽松开源条款处理。",
+      "priority": "P2",
+      "scratch": "脑信号编码器可重训，语音目标受限",
+      "status": "源码已公开但归档",
+      "license": "NOASSERTION",
+      "sources": [
+        "https://github.com/facebookresearch/brainmagick",
+        "https://github.com/facebookresearch/brainmagick/blob/main/setup.py"
+      ],
+      "id": "facebookresearch--brainmagick",
+      "url": "https://github.com/facebookresearch/brainmagick",
+      "checkedAt": "2026-10-24",
+      "pushedAt": "2024-03-12T17:49:40Z",
+      "commit": "1aa77d2dbd801b4901aeadfd8606d26a89ee7e3e",
+      "archived": true,
+      "licenseLabel": "CC-BY-NC-4.0 · 非商业",
+      "licenseClass": "restricted",
+      "readiness": "task"
+    },
+    {
+      "category": "任务方法",
+      "name": "Brain2Qwerty",
+      "repo": "facebookresearch/brain2qwerty",
+      "tracks": [
+        "自然刺激解码"
+      ],
+      "year": 2026,
+      "description": "2026 非侵入脑信号到键入句子的解码研究代码。",
+      "use": "借鉴事件对齐、卷积与句子级 Transformer、字符级解码及 N-gram 后处理；主要作为交互解码扩展参考。",
+      "caveat": "主要展示 MEG 键入任务，不能等同于 EEG 运动想象成绩；语言模型、额外文本数据与 v2 LLM 分支需确认规则。",
+      "priority": "P2",
+      "scratch": "局部网络可重训，任务适配成本高",
+      "status": "v1/v2 实现与研究数据接口已公开",
+      "sources": [
+        "https://github.com/facebookresearch/brain2qwerty",
+        "https://github.com/facebookresearch/brain2qwerty/blob/main/brain2qwerty_v1/README.md",
+        "https://www.nature.com/articles/s41593-026-02303-2"
+      ],
+      "id": "facebookresearch--brain2qwerty",
+      "url": "https://github.com/facebookresearch/brain2qwerty",
+      "checkedAt": "2026-10-24",
+      "pushedAt": "2026-09-24T16:04:22Z",
+      "commit": "5f9889621d0df391c5aab37c996683d308e6e926",
+      "archived": false,
+      "license": "NOASSERTION",
+      "licenseLabel": "CC-BY-NC-4.0 · 非商业",
+      "licenseClass": "restricted",
+      "readiness": "task"
+    },
+    {
+      "category": "任务方法",
+      "name": "BDGI for AAD",
+      "repo": "siyingtao/BDGI_for_AAD",
+      "tracks": [
+        "自然刺激解码",
+        "认知情绪"
+      ],
+      "year": 2026,
+      "description": "CogSci 2026 跨被试听觉注意解码，使用频带门控和身份解耦。",
+      "use": "复用滤波器组、ROI 通道门控、RCID 对齐损失和跨被试域适配训练器。",
+      "caveat": "源域/目标域适配的可见数据边界必须遵守官方划分；不能默认允许访问测试被试的无标签信号。",
+      "priority": "P1",
+      "scratch": "可重训",
+      "status": "模型、损失、训练入口已公开",
+      "sources": [
+        "https://github.com/siyingtao/BDGI_for_AAD",
+        "https://github.com/siyingtao/BDGI_for_AAD/blob/main/README.md"
+      ],
+      "id": "siyingtao--bdgi_for_aad",
+      "url": "https://github.com/siyingtao/BDGI_for_AAD",
+      "checkedAt": "2026-10-24",
+      "pushedAt": "2026-05-17T08:48:38Z",
+      "commit": "83ef7848d78336d1ef481778fc77d8d1289f4813",
+      "archived": false,
+      "license": "MIT",
+      "licenseLabel": "MIT",
+      "licenseClass": "open",
+      "readiness": "task"
+    },
+    {
+      "category": "任务方法",
+      "name": "TRUST-TSE",
+      "repo": "argaaw/TRUST-TSE",
+      "tracks": [
+        "自然刺激解码"
+      ],
+      "year": 2026,
+      "description": "Interspeech 2026 EEG 引导目标语音提取，针对跨试次捷径学习。",
+      "use": "借鉴双阶段训练、音频与 EEG 配对控制及防止跨试次泄漏的评测设计。",
+      "caveat": "需要匹配音频且任务不同于普通分类；KUL/DTU 数据另有非商业等限制，原数据不自动获准。",
+      "priority": "P2",
+      "scratch": "需按赛题重建训练数据",
+      "status": "models.py、train.py、loss 与配置已公开",
+      "sources": [
+        "https://github.com/argaaw/TRUST-TSE"
+      ],
+      "id": "argaaw--trust-tse",
+      "url": "https://github.com/argaaw/TRUST-TSE",
+      "checkedAt": "2026-10-24",
+      "pushedAt": "2026-06-19T11:53:28Z",
+      "commit": "2d113aca599da3b79eda5dbcee756ae48b0df645",
+      "archived": false,
+      "license": "NOASSERTION",
+      "licenseLabel": "Apache-2.0（代码；README 声明）",
+      "licenseClass": "open",
+      "readiness": "task"
+    },
+    {
+      "name": "OmniEEG-Bench",
+      "repo": "ncclab-sustech/omni-eegbench",
+      "category": "评测框架",
+      "tracks": [
+        "全赛道"
+      ],
+      "year": 2026,
+      "description": "与竞赛笔记直接关联的作者评测框架，提供统一特征提取器、分类头和模型接入接口。",
+      "use": "优先研究 models/wrappers.py、models/factory.py 和配置接口，把自研骨干映射为 [B,C,T] → [B,D]。",
+      "caveat": "论文的 54 数据集范围不等于竞赛指定 21 个数据集；README 默认加载公开 checkpoint，决赛须改为自己从零训练的模型。赛事手册仍待确认。",
+      "priority": "P0",
+      "license": "UNKNOWN",
+      "scratch": "可复用评测接口；必须移除公开权重加载",
+      "sources": [
+        "https://github.com/ncclab-sustech/omni-eegbench",
+        "https://arxiv.org/abs/2606.00815"
+      ],
+      "id": "ncclab-sustech--omni-eegbench",
+      "url": "https://github.com/ncclab-sustech/omni-eegbench",
+      "checkedAt": "2026-10-24",
+      "pushedAt": "2026-06-09T13:07:07Z",
+      "commit": "9c6a9196087d877aa1f3fef9327d111c9146615c",
+      "archived": false,
+      "licenseLabel": "未明确许可",
+      "licenseClass": "unclear",
+      "readiness": "tool"
+    },
+    {
+      "name": "EEG-Arena",
+      "repo": "OrangeP0P/eeg-arena",
+      "category": "评测框架",
+      "tracks": [
+        "全赛道"
+      ],
+      "year": 2026,
+      "description": "2026-10-10 发布的统一数据、模型、调度和评测工具包；论文覆盖 30 个 EEG 基模与 25 个监督基线。",
+      "use": "借鉴模型适配、通道配置稳健性实验、批量运行和结果聚合；作为最新模型入口。",
+      "caveat": "首版工具包 v0.00；仓库根目录未见 LICENSE。默认流程下载公开权重，决赛不可照搬；23 个基准数据集不是赛事数据白名单。",
+      "priority": "P0",
+      "license": "UNKNOWN",
+      "scratch": "借鉴评测；需替换公开权重与数据配置",
+      "sources": [
+        "https://github.com/OrangeP0P/eeg-arena",
+        "https://arxiv.org/abs/2609.32743",
+        "https://neuroinfra.net/benchmark"
+      ],
+      "id": "orangep0p--eeg-arena",
+      "url": "https://github.com/OrangeP0P/eeg-arena",
+      "checkedAt": "2026-10-24",
+      "pushedAt": "2026-10-11T17:00:43Z",
+      "commit": "c1aa1292aed21c0e170dd0da3cd0a4a60581f6ad",
+      "archived": false,
+      "licenseLabel": "未明确许可",
+      "licenseClass": "unclear",
+      "readiness": "tool"
+    },
+    {
+      "name": "EEG-FM-Compass / EEG-FM-Benchmark",
+      "repo": "Dingkun0817/EEG-FM-Benchmark",
+      "category": "评测框架",
+      "tracks": [
+        "全赛道"
+      ],
+      "year": 2026,
+      "description": "2026 年的跨被试、少样本及全量微调基准，统一比较基模、深度模型和传统方法。",
+      "use": "参考 run_finetuning.py、模型适配器、LOSO 与 few-shot 实验设计，以及 TRCA/CSP 等低算力基线。",
+      "caveat": "该基准的 13 数据集、9 范式不等于赛事划分；复用框架时须重新接入官方数据与三种子协议。",
+      "priority": "P0",
+      "license": "MIT",
+      "scratch": "评测框架与传统基线可从零运行；基模分支需替换 checkpoint",
+      "sources": [
+        "https://github.com/Dingkun0817/EEG-FM-Benchmark",
+        "https://arxiv.org/abs/2601.17883"
+      ],
+      "id": "dingkun0817--eeg-fm-benchmark",
+      "url": "https://github.com/Dingkun0817/EEG-FM-Benchmark",
+      "checkedAt": "2026-10-24",
+      "pushedAt": "2026-08-11T03:25:49Z",
+      "commit": "680b12b7678e86a6b33a4fff94076db936c1656b",
+      "archived": false,
+      "licenseLabel": "MIT",
+      "licenseClass": "open",
+      "readiness": "tool"
+    },
+    {
+      "name": "EEG-FM-Bench",
+      "repo": "xw1216/EEG-FM-Bench",
+      "category": "评测框架",
+      "tracks": [
+        "疾病",
+        "睡眠",
+        "认知情绪",
+        "运动想象",
+        "自然刺激解码"
+      ],
+      "year": 2026,
+      "description": "统一预处理和配置驱动的多范式基准，支持冻结骨干、全量微调、LoRA 与表征诊断。",
+      "use": "参考单任务/多任务对照、池化头比较、梯度冲突及 CKA/RSA 分析，帮助定位迁移瓶颈。",
+      "caveat": "README 的性能结论来自其自有数据与协议，不能直接外推到 OmniEEG；数据各有独立许可。",
+      "priority": "P1",
+      "license": "NOASSERTION",
+      "scratch": "评测与诊断代码可复用；公开模型权重不可用于决赛",
+      "sources": [
+        "https://github.com/xw1216/EEG-FM-Bench"
+      ],
+      "id": "xw1216--eeg-fm-bench",
+      "url": "https://github.com/xw1216/EEG-FM-Bench",
+      "checkedAt": "2026-10-24",
+      "pushedAt": "2026-06-30T09:08:28Z",
+      "commit": "325398d7d057ecc1216fb3510d70c16eb60337cc",
+      "archived": false,
+      "licenseLabel": "Apache-2.0（README 声明）",
+      "licenseClass": "open",
+      "readiness": "tool"
+    },
+    {
+      "name": "OpenEEGBench",
+      "repo": "braindecode/OpenEEGBench",
+      "category": "评测框架",
+      "tracks": [
+        "疾病",
+        "睡眠",
+        "认知情绪",
+        "运动想象"
+      ],
+      "year": 2026,
+      "description": "面向 EEG 基模的参数高效微调基准，提供多种 PEFT 策略、分类头和可复现实验配置。",
+      "use": "复赛比较 LoRA、IA3、AdaLoRA、DoRA、OFT 与全量微调；参考多种子和集群运行接口。",
+      "caveat": "预切窗 Hugging Face 数据不能替代官方版本和被试划分；输入/分类头约定与 OmniEEG wrapper 需适配。",
+      "priority": "P1",
+      "license": "BSD-3-Clause",
+      "scratch": "适合微调方案比较；决赛只能接自己训练的 checkpoint",
+      "sources": [
+        "https://github.com/braindecode/OpenEEGBench"
+      ],
+      "id": "braindecode--openeegbench",
+      "url": "https://github.com/braindecode/OpenEEGBench",
+      "checkedAt": "2026-10-24",
+      "pushedAt": "2026-07-09T15:51:22Z",
+      "commit": "3e4d034ae3e009deeda9c987d05a37e18fd87e15",
+      "archived": false,
+      "licenseLabel": "BSD-3-Clause",
+      "licenseClass": "open",
+      "readiness": "tool"
+    },
+    {
+      "name": "NeuralBench",
+      "repo": "facebookresearch/neuroai",
+      "category": "评测框架",
+      "tracks": [
+        "全赛道"
+      ],
+      "year": 2026,
+      "description": "Meta NeuroAI 仓库中的统一下游评测模块，支持 EEG、MEG、fMRI 和 EMG。",
+      "use": "研究 neuralbench-repo 中模型注册、随机初始化/预训练对照及自然视听刺激任务组织方式。",
+      "caveat": "这是下游评测工具，不提供完整预训练流程；单仓库各子项目许可不同，应以 neuralbench-repo/LICENSE 为准。",
+      "priority": "P1",
+      "license": "MIT",
+      "scratch": "支持随机初始化模型评测",
+      "sources": [
+        "https://github.com/facebookresearch/neuroai",
+        "https://github.com/facebookresearch/neuroai/tree/main/neuralbench-repo",
+        "https://github.com/facebookresearch/neuroai/blob/main/neuralbench-repo/LICENSE"
+      ],
+      "id": "facebookresearch--neuroai",
+      "url": "https://github.com/facebookresearch/neuroai/tree/main/neuralbench-repo",
+      "checkedAt": "2026-10-24",
+      "pushedAt": "2026-10-22T16:27:18Z",
+      "commit": "b924a95c3efe1ba2e21f306a8d3ba3afa4f48a83",
+      "archived": false,
+      "licenseLabel": "MIT（NeuralBench 子目录）",
+      "licenseClass": "open",
+      "readiness": "tool"
+    },
+    {
+      "name": "MNE-Python",
+      "repo": "mne-tools/mne-python",
+      "category": "数据与预处理",
+      "tracks": [
+        "全赛道"
+      ],
+      "year": null,
+      "description": "成熟的 EEG/MEG 数据读取、滤波、重采样、分段、通道位置和可视化基础库。",
+      "use": "建立官方数据导入、单位和通道名校验、事件对齐与一致预处理；使用报告检查异常记录。",
+      "caveat": "要明确 V/µV、参考电极和 montage；改变采样率后同步事件，不能将相邻窗口随机分到不同被试集合。",
+      "priority": "P0",
+      "license": "BSD-3-Clause",
+      "scratch": "基础处理不依赖公开模型权重",
+      "sources": [
+        "https://github.com/mne-tools/mne-python",
+        "https://mne.tools/stable/index.html"
+      ],
+      "id": "mne-tools--mne-python",
+      "url": "https://github.com/mne-tools/mne-python",
+      "checkedAt": "2026-10-24",
+      "pushedAt": "2026-10-23T12:49:32Z",
+      "commit": "87105f4dd8562f3a526306307c6b8d6c8df32252",
+      "archived": false,
+      "licenseLabel": "BSD-3-Clause",
+      "licenseClass": "open",
+      "readiness": "tool"
+    },
+    {
+      "name": "MNE-BIDS",
+      "repo": "mne-tools/mne-bids",
+      "category": "数据与预处理",
+      "tracks": [
+        "全赛道"
+      ],
+      "year": null,
+      "description": "把 BIDS 格式神经电生理数据与 MNE 对象连接起来，支持读取和写出标准化数据。",
+      "use": "通过 BIDSPath 组织 dataset/subject/session/run，保留 events、channels 和坐标元数据。",
+      "caveat": "BIDS 元数据可缺失或不一致；不得用推断标签替代正式标注，先锁定官方版本。",
+      "priority": "P0",
+      "license": "BSD-3-Clause",
+      "scratch": "无需公开权重",
+      "sources": [
+        "https://github.com/mne-tools/mne-bids"
+      ],
+      "id": "mne-tools--mne-bids",
+      "url": "https://github.com/mne-tools/mne-bids",
+      "checkedAt": "2026-10-24",
+      "pushedAt": "2026-10-22T19:29:29Z",
+      "commit": "495832ad40abe994d8a1c858d6fda15fd557855d",
+      "archived": false,
+      "licenseLabel": "BSD-3-Clause",
+      "licenseClass": "open",
+      "readiness": "tool"
+    },
+    {
+      "name": "BIDS Validator",
+      "repo": "bids-standard/bids-validator",
+      "category": "数据与预处理",
+      "tracks": [
+        "全赛道"
+      ],
+      "year": null,
+      "description": "官方 BIDS 结构、文件命名和元数据规范校验器。",
+      "use": "下载后和预处理导出后批量校验，及早发现 events/channels/JSON 的格式问题。",
+      "caveat": "通过格式校验不代表信号质量或标签正确；保存校验器版本和报告。",
+      "priority": "P0",
+      "license": "MIT",
+      "scratch": "无需公开权重",
+      "sources": [
+        "https://github.com/bids-standard/bids-validator"
+      ],
+      "id": "bids-standard--bids-validator",
+      "url": "https://github.com/bids-standard/bids-validator",
+      "checkedAt": "2026-10-24",
+      "pushedAt": "2026-10-17T17:51:30Z",
+      "commit": "f4d1b3a03723d8b192ca8d5310c1b6619e9fb870",
+      "archived": false,
+      "licenseLabel": "MIT",
+      "licenseClass": "open",
+      "readiness": "tool"
+    },
+    {
+      "name": "OpenNeuro CLI",
+      "repo": "OpenNeuroOrg/openneuro",
+      "category": "数据与预处理",
+      "tracks": [
+        "全赛道"
+      ],
+      "year": null,
+      "description": "OpenNeuro 官方项目和命令行下载入口，当前文档采用 Deno CLI 与 DataLad/git-annex。",
+      "use": "拿到官方 21 个 accession 与版本后，下载指定快照并记录来源；避免误用可变 draft。",
+      "caveat": "当前 CLI 文档已不是旧 npm 安装方式；需配置鉴权与 git-annex remote，数据许可独立于工具 MIT 许可。",
+      "priority": "P0",
+      "license": "MIT",
+      "scratch": "只提供数据传输；是否允许的数据由赛事清单决定",
+      "sources": [
+        "https://github.com/OpenNeuroOrg/openneuro",
+        "https://docs.openneuro.org/packages/openneuro-cli.html"
+      ],
+      "id": "openneuroorg--openneuro",
+      "url": "https://github.com/OpenNeuroOrg/openneuro",
+      "checkedAt": "2026-10-24",
+      "pushedAt": "2026-10-21T17:07:15Z",
+      "commit": "b42d4f161451572737d0752da22508edf687c7a6",
+      "archived": false,
+      "licenseLabel": "MIT",
+      "licenseClass": "open",
+      "readiness": "tool"
+    },
+    {
+      "name": "DataLad",
+      "repo": "datalad/datalad",
+      "category": "数据与预处理",
+      "tracks": [
+        "全赛道"
+      ],
+      "year": null,
+      "description": "基于 Git/git-annex 管理大型数据、版本和处理来源的工具。",
+      "use": "锁定 OpenNeuro 快照，按需取得大文件，并记录数据到预处理结果的追溯关系。",
+      "caveat": "克隆仓库不等于已取得实际 EEG 文件；需显式获取 annex 内容并核对完整性和磁盘容量。",
+      "priority": "P1",
+      "license": "NOASSERTION",
+      "scratch": "无需公开权重",
+      "sources": [
+        "https://github.com/datalad/datalad",
+        "https://docs.openneuro.org/packages/openneuro-cli.html"
+      ],
+      "id": "datalad--datalad",
+      "url": "https://github.com/datalad/datalad",
+      "checkedAt": "2026-10-24",
+      "pushedAt": "2026-10-21T06:21:04Z",
+      "commit": "41f00025d04f46fe6a50778c4fc99f9670d886e0",
+      "archived": false,
+      "licenseLabel": "MIT + 第三方 Python / BSD 条款",
+      "licenseClass": "open",
+      "readiness": "tool"
+    },
+    {
+      "name": "EEGDash",
+      "repo": "eegdash/EEGDash",
+      "category": "数据与预处理",
+      "tracks": [
+        "全赛道"
+      ],
+      "year": 2026,
+      "description": "持续更新的 BIDS 优先 EEG 数据目录和加载库，连接 MNE、Braindecode 与 PyTorch。",
+      "use": "研究数据查询、缓存、subject-aware splits 和元数据修复；只筛选官方允许的数据 ID。",
+      "caveat": "大目录可访问不代表比赛允许；镜像与原始 OpenNeuro 版本须逐项对应，不能直接扩大预训练语料。",
+      "priority": "P0",
+      "license": "BSD-3-Clause",
+      "scratch": "数据工具不依赖公开权重",
+      "sources": [
+        "https://github.com/eegdash/EEGDash",
+        "https://github.com/eegdash/EEGDash/blob/develop/CHANGELOG.md",
+        "https://arxiv.org/abs/2606.16041"
+      ],
+      "id": "eegdash--eegdash",
+      "url": "https://github.com/eegdash/EEGDash",
+      "checkedAt": "2026-10-24",
+      "pushedAt": "2026-10-22T23:11:24Z",
+      "commit": "103be879a50401f506ec64daef26cf62d6857649",
+      "archived": false,
+      "licenseLabel": "BSD-3-Clause",
+      "licenseClass": "open",
+      "readiness": "tool"
+    },
+    {
+      "name": "EEGUnity",
+      "repo": "Baizhige/EEGUnity",
+      "category": "数据与预处理",
+      "tracks": [
+        "全赛道"
+      ],
+      "year": 2024,
+      "description": "统一解析、批量预处理和导出异构 EEG 数据的 Python 工具。",
+      "use": "参考通道名规范化、非标准格式解析、文件哈希和 HDF5 导出，形成可重复的数据配方。",
+      "caveat": "自动解析和 LLM 辅助推断必须人工核验；优先采用确定性处理路径，保留原始单位和参考方式。",
+      "priority": "P1",
+      "license": "NOASSERTION",
+      "scratch": "确定性数据处理无需公开权重；LLM 辅助功能另审",
+      "sources": [
+        "https://github.com/Baizhige/EEGUnity",
+        "https://github.com/Baizhige/EEGUnity/blob/main/LICENSE",
+        "https://arxiv.org/abs/2410.07196"
+      ],
+      "id": "baizhige--eegunity",
+      "url": "https://github.com/Baizhige/EEGUnity",
+      "checkedAt": "2026-10-24",
+      "pushedAt": "2026-08-19T06:09:23Z",
+      "commit": "d79a2b6391a55196bdfff31cd1697e5b4653e1c5",
+      "archived": false,
+      "licenseLabel": "MIT（已读 LICENSE）",
+      "licenseClass": "open",
+      "readiness": "tool"
+    },
+    {
+      "name": "NeuroDoc / NeuroAudit",
+      "repo": "Baizhige/neurodoc",
+      "category": "数据与预处理",
+      "tracks": [
+        "全赛道"
+      ],
+      "year": 2026,
+      "description": "2026 年任务文档与可执行数据 kernel 对齐的 EEG 语料工具，并提供人工审核界面。",
+      "use": "借鉴 analysis.md、标签映射、事件定义和 kernel 职责模板，给每个赛事数据集建立任务卡。",
+      "caveat": "CC BY-NC 4.0 限非商业使用，并非宽松开源代码许可；生成流程依赖 LLM，比赛中使用范围待确认，建议先参考文档方法。",
+      "priority": "P1",
+      "license": "NOASSERTION",
+      "scratch": "参考任务规范；不默认允许调用外部 LLM 或沿用数据",
+      "sources": [
+        "https://github.com/Baizhige/neurodoc",
+        "https://eeg.fm/datasets/",
+        "https://arxiv.org/abs/2606.22925"
+      ],
+      "id": "baizhige--neurodoc",
+      "url": "https://github.com/Baizhige/neurodoc",
+      "checkedAt": "2026-10-24",
+      "pushedAt": "2026-10-21T03:57:06Z",
+      "commit": "f63ca2de0537671546a2a20000399e1d871b90ea",
+      "archived": false,
+      "licenseLabel": "CC-BY-NC-4.0 · 非商业",
+      "licenseClass": "restricted",
+      "readiness": "tool"
+    },
+    {
+      "name": "AutoReject",
+      "repo": "autoreject/autoreject",
+      "category": "数据与预处理",
+      "tracks": [
+        "信号可靠性",
+        "疾病",
+        "认知情绪",
+        "运动想象"
+      ],
+      "year": null,
+      "description": "自动识别坏 trial、修复坏传感器的 MNE 生态工具。",
+      "use": "做轻量、可解释的信号质量基线，比较剔除与插值策略对下游性能的影响。",
+      "caveat": "阈值选择应限训练数据；信号可靠性赛道若要识别伪迹，先清掉伪迹可能破坏目标，须按任务决定。",
+      "priority": "P0",
+      "license": "BSD-3-Clause",
+      "scratch": "无需公开神经网络权重",
+      "sources": [
+        "https://github.com/autoreject/autoreject"
+      ],
+      "id": "autoreject--autoreject",
+      "url": "https://github.com/autoreject/autoreject",
+      "checkedAt": "2026-10-24",
+      "pushedAt": "2026-10-09T09:12:56Z",
+      "commit": "2f72b264bb5d862ac60855ad00e7e5b09b175050",
+      "archived": false,
+      "licenseLabel": "BSD-3-Clause",
+      "licenseClass": "open",
+      "readiness": "tool"
+    },
+    {
+      "name": "PyPREP",
+      "repo": "sappelhoff/pyprep",
+      "category": "数据与预处理",
+      "tracks": [
+        "全赛道"
+      ],
+      "year": null,
+      "description": "PREP EEG 预处理流程的 Python 实现，与 MNE 协作。",
+      "use": "借鉴线噪声、坏导检测和稳健重参考，构建跨数据集一致的预处理候选。",
+      "caveat": "重参考和插值会改变空间统计；需要有效电极位置，并按数据集和任务做消融。",
+      "priority": "P0",
+      "license": "MIT",
+      "scratch": "不依赖公开神经网络权重",
+      "sources": [
+        "https://github.com/sappelhoff/pyprep"
+      ],
+      "id": "sappelhoff--pyprep",
+      "url": "https://github.com/sappelhoff/pyprep",
+      "checkedAt": "2026-10-24",
+      "pushedAt": "2026-10-14T11:42:38Z",
+      "commit": "aec30dc77b39eec5528821b198bc8158204f6452",
+      "archived": false,
+      "licenseLabel": "MIT",
+      "licenseClass": "open",
+      "readiness": "tool"
+    },
+    {
+      "name": "MNE-BIDS-Pipeline",
+      "repo": "mne-tools/mne-bids-pipeline",
+      "category": "数据与预处理",
+      "tracks": [
+        "全赛道"
+      ],
+      "year": null,
+      "description": "对整个 BIDS EEG/MEG 数据集执行可配置处理流程。",
+      "use": "参考分阶段执行、缓存、质量报告和按被试批处理，减少 21 个数据集的重复工程。",
+      "caveat": "默认配置不一定适合每个赛道；先在小样本验证滤波、事件、参考和剔除政策。",
+      "priority": "P1",
+      "license": "BSD-3-Clause",
+      "scratch": "常规处理可不使用公开权重；自动标注插件另审",
+      "sources": [
+        "https://github.com/mne-tools/mne-bids-pipeline"
+      ],
+      "id": "mne-tools--mne-bids-pipeline",
+      "url": "https://github.com/mne-tools/mne-bids-pipeline",
+      "checkedAt": "2026-10-24",
+      "pushedAt": "2026-10-23T02:56:27Z",
+      "commit": "e2a34cf44ab8d2df3646aaedc93de6c042e1b00a",
+      "archived": false,
+      "licenseLabel": "BSD-3-Clause",
+      "licenseClass": "open",
+      "readiness": "tool"
+    },
+    {
+      "name": "MNE-ICALabel",
+      "repo": "mne-tools/mne-icalabel",
+      "category": "数据与预处理",
+      "tracks": [
+        "信号可靠性"
+      ],
+      "year": 2022,
+      "description": "使用 ICLabel 自动标注 ICA 成分，区分脑活动和常见伪迹。",
+      "use": "用于赛前探索和解释伪迹类型；可参考成分特征与信号可靠性分析流程。",
+      "caveat": "ICLabel 含已训练分类器，不能因其是预处理工具就认定不受公开权重禁令约束；决赛需主办方解释或改用无预训练方案。",
+      "priority": "P2",
+      "license": "BSD-3-Clause",
+      "scratch": "默认使用预训练分类器，决赛不可直接默认采用",
+      "sources": [
+        "https://github.com/mne-tools/mne-icalabel"
+      ],
+      "id": "mne-tools--mne-icalabel",
+      "url": "https://github.com/mne-tools/mne-icalabel",
+      "checkedAt": "2026-10-24",
+      "pushedAt": "2026-10-19T21:59:23Z",
+      "commit": "86e893d6c11653e5bcc1ca703e96aca352e18940",
+      "archived": false,
+      "licenseLabel": "BSD-3-Clause",
+      "licenseClass": "open",
+      "readiness": "tool"
+    },
+    {
+      "name": "Braindecode",
+      "repo": "braindecode/braindecode",
+      "category": "训练工程",
+      "tracks": [
+        "全赛道"
+      ],
+      "year": null,
+      "description": "EEG 深度学习工具库，整合数据窗、模型、增强和训练接口。",
+      "use": "快速搭建 EEGNet/Shallow/Deep 等从零监督基线，复用窗口化、批处理及增强，再接统一评测。",
+      "caveat": "增强需保持 EEG 语义；必须按被试先划分再切窗，训练标准化统计不能泄漏到验证集。",
+      "priority": "P0",
+      "license": "BSD-3-Clause",
+      "scratch": "多数监督骨干可随机初始化；具体模型的预训练开关需检查",
+      "sources": [
+        "https://github.com/braindecode/braindecode",
+        "https://braindecode.org/"
+      ],
+      "id": "braindecode--braindecode",
+      "url": "https://github.com/braindecode/braindecode",
+      "checkedAt": "2026-10-24",
+      "pushedAt": "2026-10-22T10:09:11Z",
+      "commit": "df66b2ed5d04b303041017d36c577a99935fc4a7",
+      "archived": false,
+      "licenseLabel": "BSD-3-Clause",
+      "licenseClass": "open",
+      "readiness": "tool"
+    },
+    {
+      "name": "MOABB",
+      "repo": "NeuroTechX/moabb",
+      "category": "评测框架",
+      "tracks": [
+        "运动想象",
+        "SSVEP",
+        "认知情绪"
+      ],
+      "year": null,
+      "description": "成熟的 BCI 算法和数据集评测框架。",
+      "use": "建立 CSP/LDA、黎曼方法与深度模型的统一对照；参考跨被试和跨会话评测。",
+      "caveat": "框架默认的数据、协议和统计聚合需换成赛事设置；可下载数据不等于可以用于决赛。",
+      "priority": "P0",
+      "license": "BSD-3-Clause",
+      "scratch": "传统基线不依赖公开权重",
+      "sources": [
+        "https://github.com/NeuroTechX/moabb"
+      ],
+      "id": "neurotechx--moabb",
+      "url": "https://github.com/NeuroTechX/moabb",
+      "checkedAt": "2026-10-24",
+      "pushedAt": "2026-10-22T15:58:25Z",
+      "commit": "9282ba688ec3737c88540009de4e341f36e88a67",
+      "archived": false,
+      "licenseLabel": "BSD-3-Clause",
+      "licenseClass": "open",
+      "readiness": "tool"
+    },
+    {
+      "name": "TorchEEG",
+      "repo": "torcheeg/torcheeg",
+      "category": "训练工程",
+      "tracks": [
+        "认知情绪",
+        "运动想象",
+        "疾病",
+        "睡眠"
+      ],
+      "year": null,
+      "description": "PyTorch EEG 工具库，提供数据适配、变换和多类神经网络模型。",
+      "use": "快速复现情绪等赛道候选，借鉴数据缓存、特征变换与模型训练模块。",
+      "caveat": "图拓扑、网格映射和通道顺序与具体数据集相关；选择按被试划分而非随机窗口划分。",
+      "priority": "P1",
+      "license": "NOASSERTION",
+      "scratch": "可随机初始化模型；逐项排查预训练依赖",
+      "sources": [
+        "https://github.com/torcheeg/torcheeg"
+      ],
+      "id": "torcheeg--torcheeg",
+      "url": "https://github.com/torcheeg/torcheeg",
+      "checkedAt": "2026-10-24",
+      "pushedAt": "2026-10-23T03:41:04Z",
+      "commit": "dc3a15977d702eebc347382b16bcfcff2851b983",
+      "archived": false,
+      "licenseLabel": "MIT（README 声明）",
+      "licenseClass": "open",
+      "readiness": "tool"
+    },
+    {
+      "name": "pyRiemann",
+      "repo": "pyRiemann/pyRiemann",
+      "category": "训练工程",
+      "tracks": [
+        "运动想象",
+        "认知情绪",
+        "疾病"
+      ],
+      "year": null,
+      "description": "基于正定矩阵黎曼几何的机器学习工具，适合 EEG 协方差特征。",
+      "use": "实现低成本 MDM、切空间分类与协方差基线，检验基模提升是否超过强传统方法。",
+      "caveat": "协方差正则化、频段和参考方式影响结果；域对齐统计必须遵守训练/测试隔离。",
+      "priority": "P0",
+      "license": "BSD-3-Clause",
+      "scratch": "无需公开权重",
+      "sources": [
+        "https://github.com/pyRiemann/pyRiemann"
+      ],
+      "id": "pyriemann--pyriemann",
+      "url": "https://github.com/pyRiemann/pyRiemann",
+      "checkedAt": "2026-10-24",
+      "pushedAt": "2026-10-22T10:01:35Z",
+      "commit": "5357a9dfe4b365f015d19ce1e0172f66370fc10a",
+      "archived": false,
+      "licenseLabel": "BSD-3-Clause",
+      "licenseClass": "open",
+      "readiness": "tool"
+    },
+    {
+      "name": "Zarr-Python",
+      "repo": "zarr-developers/zarr-python",
+      "category": "训练工程",
+      "tracks": [
+        "全赛道"
+      ],
+      "year": null,
+      "description": "分块压缩的多维数组存储，适合多被试大规模 EEG 缓存。",
+      "use": "为跨数据集预训练按 recording/时间片设计分块，降低重复解码与随机读取开销。",
+      "caveat": "OmniEEG 项目存在 Zarr 相关处理；先核对其格式版本，避免混用 v2/v3 API，记录采样率、通道和来源 ID。",
+      "priority": "P1",
+      "license": "MIT",
+      "scratch": "存储工具，无公开权重依赖",
+      "sources": [
+        "https://github.com/zarr-developers/zarr-python",
+        "https://github.com/ncclab-sustech/omni-eegbench"
+      ],
+      "id": "zarr-developers--zarr-python",
+      "url": "https://github.com/zarr-developers/zarr-python",
+      "checkedAt": "2026-10-24",
+      "pushedAt": "2026-10-22T09:14:42Z",
+      "commit": "957a5f682b46b4055d5619d01b4a3a3cc36c04db",
+      "archived": false,
+      "licenseLabel": "MIT",
+      "licenseClass": "open",
+      "readiness": "tool"
+    },
+    {
+      "name": "WebDataset",
+      "repo": "webdataset/webdataset",
+      "category": "训练工程",
+      "tracks": [
+        "全赛道"
+      ],
+      "year": null,
+      "description": "面向 PyTorch 的 tar 分片流式数据读取工具，可服务多卡预训练。",
+      "use": "当小文件读取成为瓶颈时，将合规 EEG 窗口打包成分片并配合分布式采样。",
+      "caveat": "先按被试划分再打包；显式配置 worker/rank 分片，避免重复采样或训练验证混杂。不是必需依赖。",
+      "priority": "P2",
+      "license": "BSD-3-Clause",
+      "scratch": "I/O 工具，无公开权重依赖",
+      "sources": [
+        "https://github.com/webdataset/webdataset"
+      ],
+      "id": "webdataset--webdataset",
+      "url": "https://github.com/webdataset/webdataset",
+      "checkedAt": "2026-10-24",
+      "pushedAt": "2026-02-09T14:48:08Z",
+      "commit": "e0953f9bba17b416d5792d5a263b171c266e78be",
+      "archived": false,
+      "licenseLabel": "BSD-3-Clause",
+      "licenseClass": "open",
+      "readiness": "tool"
+    }
+  ],
+  "watchlist": [
+    {
+      "name": "BrainRVQ",
+      "repo": "keqicmz/BrainRVQ",
+      "url": "https://github.com/keqicmz/BrainRVQ",
+      "reason": "当前 README 只有项目标题，未核实可复用实现；不计入已可用项目。"
+    },
+    {
+      "name": "ALFEE",
+      "repo": "xw1216/ALFEE",
+      "url": "https://github.com/xw1216/ALFEE",
+      "reason": "README 仍标 Coming Soon，未核实实现发布。"
+    },
+    {
+      "name": "EEG-PRIME",
+      "repo": "ZhangShuailei/EEG-PRIME",
+      "url": "https://arxiv.org/abs/2608.13072",
+      "reason": "综述列表所给 GitHub 链接本次返回 404；仅作为论文关注项。"
+    },
+    {
+      "name": "DARE-EEG",
+      "url": "https://arxiv.org/abs/2605.18298",
+      "reason": "综述的代码链接指向 github.com/anonymous 占位，不能当开源实现。"
+    },
+    {
+      "name": "DeeperBrain",
+      "repo": "DeeperBrain/DeeperBrain",
+      "url": "https://arxiv.org/abs/2601.06134",
+      "reason": "本次 GitHub 与 raw 读取均未成功，不能确认官方代码可用。"
+    },
+    {
+      "name": "BioCodec",
+      "repo": "usc-sail/BioCodec",
+      "url": "https://arxiv.org/abs/2510.09095",
+      "reason": "列表提供的官方 GitHub 链接本次返回 404，未计入可用源码。"
+    },
+    {
+      "name": "EEG-DINO",
+      "repo": "miraclefish/EEG-DINO",
+      "url": "https://huggingface.co/eegdino/EEG-DINO",
+      "reason": "原 GitHub 地址本次返回 404；模型卡可见但不等同可复用完整训练代码。"
+    },
+    {
+      "name": "HEAR",
+      "url": "https://arxiv.org/abs/2510.12515",
+      "reason": "只定位到论文及 OpenReview 补充代码线索；未确认公开完整预训练仓库与许可。"
+    },
+    {
+      "name": "DIVER-0 / DIVER-1",
+      "url": "https://arxiv.org/abs/2512.19097",
+      "reason": "常见 cha-lab 路径无法访问；匿名代码链接和最终正式仓库尚待确认。"
+    },
+    {
+      "name": "CEReBrO / S-CEReBrO",
+      "url": "https://arxiv.org/abs/2501.10885",
+      "reason": "已确认论文与作者页面，本次未定位可核验独立训练代码仓库。"
+    },
+    {
+      "name": "FoME",
+      "repo": "1061413241/FoME",
+      "url": "https://github.com/1061413241/FoME",
+      "reason": "作者仓库只有 Apache-2.0 LICENSE 和一行 README，无模型或训练实现。论文 https://arxiv.org/abs/2409.12454 。"
+    },
+    {
+      "name": "BrainWave / Brant-2",
+      "repo": "yzz673/Brant-2",
+      "url": "https://github.com/yzz673/Brant-2",
+      "reason": "作者仓库只有图片与 README，声明论文发表后发布代码；当前无可核验实现。论文 https://arxiv.org/abs/2402.10251 。"
+    },
+    {
+      "name": "Brant（原版）",
+      "url": "https://github.com/yzz673/Brant",
+      "reason": "作者将源码指向受门控的 Hugging Face；本次未接受门控条件，未核验完整训练实现。"
+    },
+    {
+      "name": "NeuroMM-2026 Baseline",
+      "url": "https://github.com/NeuroMM-Org/NeuroMM-2026_Baseline",
+      "reason": "代码可读，但 LICENSE 为 All rights reserved 占位文本，尚无正式复用授权。"
+    },
+    {
+      "name": "EEG FM Reliability",
+      "url": "https://www.biorxiv.org/content/10.64898/2026.08.19.745052v1.full",
+      "reason": "论文提供的 BelayTG/eeg-fm-reliability 仓库本次返回 404；尚不能确认可用实现。"
+    }
+  ]
+}

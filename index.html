@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#173d34">
+  <meta name="description" content="面向 OmniEEG Challenge 2026 的开源项目研究库。检索 EEG 基座、从零预训练、七赛道方法、数据处理和评测工具，查看许可证、代码状态及竞赛适配建议。">
+  <title>EGG · OmniEEG 开源研究库</title>
+  <link rel="icon" href="./assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="./assets/style.css">
+  <script src="./assets/app.js" defer></script>
+</head>
+<body>
+  <a class="skip" href="#library">跳到项目资源库</a>
+  <header class="site-header"><div class="header-inner">
+    <a class="brand" href="#"><span class="brand-mark" aria-hidden="true">e<span>g</span>g</span><span>EEG RESEARCH ATLAS<small>OmniEEG Challenge 2026</small></span></a>
+    <nav aria-label="主要导航"><a href="#picks">赛道 Top 3</a><a href="#library">资源库</a><a href="#routes">技术路线</a><a href="#evidence">规则与证据</a></nav>
+    <a class="repo-link" href="https://github.com/cjgogo27/EGG" target="_blank" rel="noopener noreferrer">GitHub <span aria-hidden="true">↗</span></a>
+  </div></header>
+
+  <main>
+    <section class="hero wrap" aria-labelledby="hero-title">
+      <div class="hero-copy"><p class="eyebrow"><span class="status-dot"></span> OPEN SOURCE / EEG / 2026</p>
+        <h1 id="hero-title">从开源研究，<br>到你的<span> EEG 方案。</span></h1>
+        <p class="hero-description">围绕 OmniEEG 竞赛，串起基座、预训练、七赛道方法与工程工具。找到代码，也看清它能用在哪里。</p>
+        <div class="hero-actions"><a class="button primary" href="#library">探索项目资源 <span>↓</span></a><a class="text-link" href="#routes">先看推荐路线 ↗</a></div>
+        <p class="snapshot">研究快照 <time datetime="2026-10-24">2026.10.24</time><span>·</span>基于项目一手来源核查</p>
+      </div>
+      <div class="signal-panel" aria-label="竞赛研究流程示意">
+        <div class="panel-top"><span>RESEARCH → IMPLEMENTATION</span><span class="panel-index">01—07</span></div>
+        <svg class="signal" viewBox="0 0 520 165" role="img" aria-label="脑电波形装饰，非实验数据">
+          <defs><pattern id="grid" width="26" height="27" patternUnits="userSpaceOnUse"><path d="M26 0H0V27" fill="none" stroke="currentColor" stroke-width=".6" opacity=".18"/></pattern></defs>
+          <rect width="520" height="165" fill="url(#grid)"/>
+          <path d="M0 85 20 85 25 79 30 89 35 82 42 85 60 85 69 65 77 111 85 43 93 130 101 67 109 91 117 81 126 85 149 85 159 76 170 99 181 48 192 122 205 76 215 87 236 85 249 89 257 71 267 98 277 82 297 85 310 64 320 109 331 24 342 139 354 59 366 96 378 77 390 85 417 85 427 74 439 98 450 79 465 85 520 85" fill="none" stroke="#d8f992" stroke-width="2.2" stroke-linejoin="round"/>
+        </svg>
+        <div class="signal-flow"><div><strong>21</strong><span>指定数据集<small>清单待官方确认</small></span></div><span class="flow-arrow">→</span><div><strong>0</strong><span>公开权重<small>决赛从零预训练</small></span></div><span class="flow-arrow">→</span><div><strong>7</strong><span>任务赛道<small>统一下游评测</small></span></div></div>
+        <div class="track-strip"><span>信号可靠性</span><span>疾病</span><span>睡眠</span><span>认知情绪</span><span>运动想象</span><span>自然刺激解码</span><span>SSVEP</span></div>
+        <p class="panel-note">依据所提供竞赛笔记 · 流程示意，非实验结果</p>
+      </div>
+    </section>
+
+    <div class="wrap"><div class="rule-strip"><span class="rule-label">使用边界</span><p><strong>决赛禁用公开权重。</strong>代码、架构和训练配方可作为候选；tokenizer、教师模型、外部数据及代码复用范围仍需正式规则确认。</p><a href="#evidence" aria-label="查看规则来源">查看来源 ↗</a></div></div>
+
+    <section class="stats wrap" aria-label="资源库统计"><div><strong id="stat-total">—</strong><span>已核查项目</span></div><div><strong id="stat-new">—</strong><span>2026 年研究</span></div><div><strong id="stat-license">—</strong><span>明确标准开源许可证</span></div><div><strong>7 / 7</strong><span>竞赛赛道覆盖</span></div></section>
+
+    <section class="wrap picks-section" id="picks" aria-labelledby="picks-title">
+      <div class="section-heading"><div><p class="eyebrow">7 TRACKS / 3 STARTING POINTS EACH</p><h2 id="picks-title">每个赛道，先看这 3 个<span class="heading-dot">.</span></h2></div><p>按代码可用性与竞赛适配性选择，非性能榜单。</p></div>
+      <div id="pick-tabs" class="pick-tabs" aria-label="选择推荐赛道"></div>
+      <p id="pick-focus" class="pick-focus"></p><div id="pick-cards" class="pick-cards"></div>
+      <p class="pick-note">选择兼顾成熟基线与近期方法；“推荐参考”不等于准许复用。许可证或公开权重受限时，请先确认条件。</p>
+    </section>
+
+    <section class="wrap library" id="library" aria-labelledby="library-title">
+      <div class="section-heading"><div><p class="eyebrow">THE OPEN SOURCE INDEX</p><h2 id="library-title">项目资源库<span class="heading-dot">.</span></h2></div><p>从实际用途出发，缩小你的候选集。</p></div>
+      <div class="library-layout">
+        <aside class="filters" aria-label="筛选项目"><div class="filter-head"><h3>按用途筛选</h3><button id="clear-filters" class="text-button">重置</button></div><div id="category-filters" class="category-filters"></div><h3 class="filter-subtitle">关联赛道</h3><div id="track-filters" class="track-filters"></div><div class="filter-note"><span>如何理解优先级</span><p><b>P0</b> 先读 / 先接通<br><b>P1</b> 重点实验候选<br><b>P2</b> 拓展参考</p><small>为本竞赛给出的工程判断，不是论文性能排名。</small></div></aside>
+        <div class="results-area"><div class="search-toolbar"><label class="search-box"><span aria-hidden="true">⌕</span><input id="search" type="search" placeholder="搜索模型、方法、用途…" aria-label="搜索项目"><kbd>/</kbd></label><label class="sort-label"><span class="sr-only">排序</span><select id="sort"><option value="priority">推荐优先</option><option value="updated">仓库推送时间</option><option value="year">研究年份</option><option value="name">项目名称</option></select></label></div>
+          <label class="readiness-label">代码范围 <select id="readiness"><option value="all">全部状态</option><option value="pretrain">有预训练入口</option><option value="task">任务训练代码</option><option value="tool">工具 / 评测</option><option value="partial">推理 / 局部代码</option></select></label><div class="quick-filters"><button data-quick="all" class="active" aria-pressed="true">全部项目</button><button data-quick="new" aria-pressed="false">2026 年研究</button><button data-quick="licensed" aria-pressed="false">明确开源许可</button><button data-quick="saved" aria-pressed="false">我的收藏 <span id="saved-count">0</span></button></div>
+          <div class="result-meta"><span id="result-count" role="status" aria-live="polite">正在载入项目…</span><button id="export" class="text-button">导出当前结果 ↓</button></div>
+          <div id="resources" class="resources"></div><div id="empty-state" class="empty-state" hidden><strong>暂时没有匹配的项目</strong><p>试试更短的关键词，或清除赛道与用途筛选。</p><button id="empty-reset" class="button secondary">清除筛选</button></div>
+          <p class="catalog-footnote">项目可访问性与仓库元数据在核查时确认；未逐个安装或复现实验。推送时间不等于论文发表时间，也不代表模型效果。所有适配建议均需在官方数据和协议下验证。</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="routes-section" id="routes"><div class="wrap"><div class="section-heading"><div><p class="eyebrow">FROM READING TO RUNNING</p><h2>把项目串成实验路线<span class="heading-dot">.</span></h2></div><p>按赛事阶段组织工作，让每一步都可验证。</p></div>
+      <div class="route-grid">
+        <article class="route-card"><span class="route-number">01 / PROPOSAL</span><h3>先把评测协议看清</h3><p>从 OmniEEG-Bench 的模型接口和 task card 入手，用 EEG-Arena、EEG-FM-Bench 补充对照方案。确认被试划分、指标和训练预算。</p><a href="#library" data-category-link="评测框架">查看评测项目 ↗</a><div class="route-output">产出：任务矩阵 + 可复现评测设计</div></article>
+        <article class="route-card"><span class="route-number">02 / BASELINE</span><h3>先建立可信的起点</h3><p>MNE / MNE-BIDS 统一通道、单位和采样率；Braindecode / EEGNet 建立轻量基线。SSVEP 增加 CCA / TRCA，防止复杂模型掩盖问题。</p><a href="#library" data-category-link="数据与预处理">查看数据工具 ↗</a><div class="route-output">产出：数据检查 + 分赛道强基线</div></article>
+        <article class="route-card"><span class="route-number">03 / PRETRAIN</span><h3>选一条可落地的预训练路线</h3><p>优先检查 CBraMod、EEGPT、ST-EEGFormer 的训练链路；LaBraM 的离散 tokenizer 需重新训练。REVE、LUNA 等用于比较通道适配设计。</p><a href="#library" data-category-link="基座与预训练">查看预训练项目 ↗</a><div class="route-output">产出：从零训练 + 算力实测 + 消融</div></article>
+        <article class="route-card"><span class="route-number">04 / VALIDATE</span><h3>把收益落实到七赛道</h3><p>在同一被试划分和预算下对比随机初始化、预训练、线性探针与全量微调。记录三种子均值与波动，并按官方规则计算最终分数。</p><a href="#library" data-category-link="任务方法">查看任务方法 ↗</a><div class="route-output">产出：分赛道结果 + 失败案例 + 复现包</div></article>
+      </div>
+      <div class="engineering-note"><strong>优先消除三个常见偏差</strong><span>先按被试划分，再切窗，避免数据泄漏。</span><span>分清 V 与 µV、参考电极和滤波条件。</span><span>保持 SSVEP 频率与相位；预处理参数只在训练集确定。</span></div>
+    </div></section>
+
+    <section class="wrap evidence" id="evidence"><div class="section-heading"><div><p class="eyebrow">SOURCES & BOUNDARIES</p><h2>每条建议，都有出处<span class="heading-dot">.</span></h2></div><p>公开可见 ≠ 许可证明确 ≠ 竞赛允许。</p></div><div class="evidence-grid">
+      <article><span class="evidence-label">01 / 竞赛依据</span><h3>保留已知信息与未决事项</h3><p>报名截止 10 月 31 日、初赛 11 月 2 日开始、决赛指定 21 个 OpenNeuro 数据集、禁用公开权重等，来自你提供的 2026-10-23 竞赛笔记。公开社区页可核实赛事存在与举办方，未代替完整规则核验。</p><p>待确认：21 数据集的版本与划分、外部数据、tokenizer / teacher 限制、代码复用范围、GPU 配额、最终评分与提交要求。</p><a href="https://test-science.tencent.com/dayanAI4S/activities/" target="_blank" rel="noopener noreferrer">主办方社区赛事入口 ↗</a><a href="https://docs.qq.com/form/page/DWWpuYWp5enBReVRG" target="_blank" rel="noopener noreferrer">报名表 ↗</a></article>
+      <article><span class="evidence-label">02 / 项目依据</span><h3>一手仓库 + 明确时间语义</h3><p>条目来源为作者仓库、项目文档和论文。每个项目保留具体来源、适配理由与使用限制。GitHub API 提供仓库状态、许可证识别结果和推送时间；研究年份与仓库推送时间分列。</p><p>“全赛道”表示通用架构或工程用途，并非已在七项任务上证明有效。P0 / P1 / P2 与技术路线是面向这次竞赛的判断。</p><a href="./data/resources.json" download>下载完整结构化数据 ↗</a><a href="https://github.com/cjgogo27/EGG/blob/main/RESEARCH.md" target="_blank" rel="noopener noreferrer">检索方法与核查记录 ↗</a></article>
+      <article><span class="evidence-label">03 / 覆盖范围</span><h3>广覆盖，持续可补充</h3><p>覆盖 EEG 基础模型、自监督学习、七赛道方法、预处理、评测与数据工程；保留仍有价值的旧基线。未声称穷尽全网，也未把论文中的全部数据当成本次竞赛允许数据。</p><p>公开权重依赖、无许可证、非商业许可、只有推理或尚未发布代码，会单独提示。许可证字段用于筛选，具体权利以仓库原文及相关权重、数据条款为准。</p><a href="https://github.com/cjgogo27/EGG/issues/new" target="_blank" rel="noopener noreferrer">补充项目 / 报告更正 ↗</a></article>
+    </div><div id="watchlist" class="watchlist" hidden></div></section>
+  </main>
+  <footer class="wrap footer"><a class="brand" href="#"><span class="brand-mark" aria-hidden="true">egg</span><span>把阅读变成可验证的实验。</span></a><p>OmniEEG 开源研究库 · 非官方赛事网站<br>Research snapshot · 24 OCT 2026</p><a href="https://github.com/cjgogo27/EGG">在 GitHub 查看源码 ↗</a></footer>
+  <div id="compare-tray" class="compare-tray" hidden><span id="compare-count"></span><button id="open-compare" class="button primary">对比项目 ↗</button><button id="clear-compare" class="text-button">清空</button></div>
+  <dialog id="compare-dialog" aria-labelledby="compare-title"><div class="dialog-heading"><div><p class="eyebrow">SIDE BY SIDE</p><h2 id="compare-title">候选项目对比</h2></div><button id="close-compare" class="icon-button" aria-label="关闭对比">×</button></div><div id="compare-content"></div></dialog>
+  <div id="toast" class="toast" role="status" hidden></div>
+  <noscript><p class="wrap">请启用 JavaScript 使用搜索与筛选，或直接<a href="./data/resources.json">下载完整资源数据</a>。</p></noscript>
+</body>
+</html>
