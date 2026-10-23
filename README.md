@@ -47,6 +47,13 @@ python scripts/validate.py
 node --check assets/app.js
 ```
 
+可选的前端行为检查（仅开发测试需要依赖）：
+
+```bash
+npm install --ignore-scripts
+npm test
+```
+
 GitHub Pages 使用 `main` 分支根目录，`.nojekyll` 保持静态文件原样发布。
 
 ## 维护与边界
